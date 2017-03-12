@@ -41,6 +41,7 @@ id              | integer   | not null, primary key
 term            | string    | not null
 definition      | text      | not null 
 study_set_id    | integer   | not null, indexed
+starred         | boolean   | not null, default ("false")
 
 ## flashcard_sets 
 column name     | data type | details
