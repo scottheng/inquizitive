@@ -2,7 +2,10 @@
 
 [Heroku link][heroku]
 
+[Trello][trello]
+
 [heroku]: https://inquizitive-app.herokuapp.com
+[trello]: https://trello.com/b/voY8wjB6/inquizitive
 
 ## Minimum Viable Product
 
@@ -13,7 +16,7 @@ inQuizitive is a full-stack web application based on Quizlet built using Ruby on
 - [ ] New account creation, login, and guest/demo login
 - [ ] Create study sets 
 - [ ] Search for study sets 
-- [ ] Share study sets 
+- [ ] Folders
 - [ ] Display study set as flashcards 
 
 ## Design Docs
@@ -41,11 +44,7 @@ inQuizitive is a full-stack web application based on Quizlet built using Ruby on
 
 ### Phase 3: Study Sets (2 days) 
 
-**Objective:** Cards belong to study sets that can be created, updated, read, and deleted through the API
-
-### Phase 3: Study Sets Search and Share (1 day) 
-
-**Objective:** Ability to search for available study sets through the API and share URL to other users
+**Objective:** Cards belong to study sets that can be created, updated, read, and deleted through the API. Study sets can be searched by the user.
 
 ### Phase 4: Display Study Sets as Flashcards (2 days) 
 
