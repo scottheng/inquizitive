@@ -1,12 +1,16 @@
 # inQuizitive
 
+[Heroku link][heroku]
+
+[heroku]: https://inquizitive-app.herokuapp.com
+
 ## Minimum Viable Product
 
 inQuizitive is a full-stack web application based on Quizlet built using Ruby on Rails and React/Redux. By March 24, this app will, at a minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data, and sufficient CSS styling:
 
 - [ ] Hosting on Heroku
-- [ ] New account creation and login
-- [ ] Guest/demo login 
+- [ ] Production README
+- [ ] New account creation, login, and guest/demo login
 - [ ] Create study sets 
 - [ ] Search for study sets 
 - [ ] Share study sets 
@@ -47,7 +51,7 @@ inQuizitive is a full-stack web application based on Quizlet built using Ruby on
 
 **Objective:** Allow users to click on flashcards to toggle between term and definition 
 
-## Phase 5: Folders (1 day)
+### Phase 5: Folders (1 day)
 
 **Objective:** Allow users to organize study sets into folders
 
