@@ -23,20 +23,6 @@
         1: {
             title: "First study set",
             user_id: 1,
-            folders: {
-                1: {
-                    id: 1,
-                    name: "Folder 1",
-                    description: "Optional description"
-                }
-            },
-            classes: {
-                1: {
-                    id: 1,
-                    name: "Class 1",
-                    description: "Optional description"
-                }
-            }
         }
     },
     cards: {
@@ -50,24 +36,6 @@
         1: {
             name: "Flashcards Set Name",
             user_id: 1,
-            cards: {
-                1: {
-                    term: "example term",
-                    definition: "example definition"
-                }
-            }
-        }
-    },
-    classes: {
-        1: {
-            name: "Class 1",
-            description: "Optional description",
-            members: {
-                1: {
-                    username: "test-user",
-                    email: "test-user@example.com"
-                }
-            }
         }
     },
     folders: {
@@ -77,7 +45,6 @@
             user_id: 1
         }
     }
-
 }
 
 
