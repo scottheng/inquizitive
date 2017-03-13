@@ -12,9 +12,6 @@
       + FolderListContainer 
         - FolderList
           + FolderListItem
-      + ClassListContainer
-        - ClassList 
-          + ClassListItem
 
 **HomeContainer**
  - Home
@@ -61,18 +58,6 @@
    + FlashcardsSidebarContainer 
      + FlashcardsSidebar
 
-**ClassCreateSearchContainer**
- - ClassCreateSearch 
-   + ClassSearchResults 
-     + ClassSearchResultsItem
-
-**ClassContainer**
- - Class 
-   + StudySetList 
-     + StudySetItem
-   + ClassNavBarContainer 
-     + ClassNavBar
-
 **FolderContainer**
  - StudySetListContainer 
    + StudySetList 
@@ -95,13 +80,6 @@
 **AddSetContainer**
  - AddSet
 
-**ClassFormContainer**
- - ClassForm 
-
-**AddMembersContainer**
- - AddMembers
-
-
  ## Routes
 
 |Path   | Component   |
@@ -114,8 +92,6 @@
 | "/study-sets/:study_setId/create" | "StudySetFormContainer" |
 | "/study-sets/:study_setId/edit" | "StudySetFormContainer" |
 | "/study-sets/:study_setId/flashcards" | "FlashcardsContainer" |
-| "/class/:classId | "ClassContainer" |
-| "/add-class" | "ClassCreateSearchContainer" |
 | "/folders/:folderId" | "FolderContainer" |
 | "/settings/" | "SettingsContainer" |
 
