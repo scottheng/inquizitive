@@ -1,6 +1,7 @@
 import React from 'react';
 import SessionFormContainer from '../session/session_form_container';
 import Modal from 'react-modal';
+import { browserHistory } from 'react-router';
 // import ModalStyle from '../modal/modal_style';
 
 class Header extends React.Component {
@@ -8,10 +9,24 @@ class Header extends React.Component {
 		super(props);
 		this.state = {modalOpen: false, logIn: false, loggedIn: false};
 		this.onModalClose = this.onModalClose.bind(this);
+		this.redirectHome = this.redirectHome.bind(this);
+	}
+
+	componentDidMount() {
+		debugger
+		this.redirectIfLoggedIn();
+	}
+
+
+	redirectIfLoggedIn() {
+		if (this.props.currentUser) {
+			browserHistory.push('/latest');
+		}
 	}
 
 	componentWillReceiveProps(newProps) {
 		this.setState({modalOpen: !newProps.currentUser});
+		this.redirectIfLoggedIn();
 	}
 
 	handleClick(bool, e) {
@@ -23,11 +38,25 @@ class Header extends React.Component {
 		this.setState({modalOpen: false});
 	}
 
-	render() {
-		const formComponent = (this.state.logIn) ? <SessionFormContainer formType="login" /> : <SessionFormContainer formType="signup" />
-		return (
-			<header>
-				<h1>inQuizitive</h1>
+	redirectHome(e) {
+		e.preventDefault();
+		this.props.logout()
+		.then(() => browserHistory.push('/'))
+		.then(() => this.setState({modalOpen: false}));
+	}
+
+	renderRightNav() {
+		if (this.props.currentUser) {
+			return (
+				<ul className="right-nav">
+					<button id="log-out-button"
+							onClick={this.redirectHome}>
+						Log out 
+					</button>
+				</ul>
+			);
+		} else {
+			return (
 				<ul className="right-nav">
 					<button id="log-in-button" 
 							onClick={this.handleClick.bind(this, true)}>
@@ -38,7 +67,16 @@ class Header extends React.Component {
 						Sign up
 					</button>
 				</ul>
+			);
+		}
+	}
 
+	render() {
+		const formComponent = (this.state.logIn) ? <SessionFormContainer formType="login" /> : <SessionFormContainer formType="signup" />
+		return (
+			<header>
+				<h1>inQuizitive</h1>
+				{this.renderRightNav()}
 				<Modal
 					isOpen={this.state.modalOpen}
 					onRequestClose={this.onModalClose}>

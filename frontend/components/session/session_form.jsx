@@ -14,7 +14,7 @@ class SessionForm extends React.Component {
 
 	redirectIfLoggedIn() {
 		if (this.props.loggedIn) {
-			browserHistory.push("/");
+			browserHistory.replace("/");
 		}
 	}
 
@@ -26,7 +26,7 @@ class SessionForm extends React.Component {
 		e.preventDefault();
 		const user = this.state;
 		this.props.processForm(user)
-		.then(() => this.redirectIfLoggedIn());
+		.then(() => browserHistory.push('/latest'));
 	}
 
 	renderEmailInput() {
