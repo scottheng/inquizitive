@@ -7,7 +7,13 @@ import Modal from 'react-modal';
 
 document.addEventListener('DOMContentLoaded', () => {
     Modal.setAppElement(document.getElementById('root'));
-    const store = configureStore();
+    let store;
+    if (window.currentUser) {
+        const preloadedState = { session: { currentUser: window.currentUser }};
+        store = configureStore(preloadedState);
+    } else {
+        store = configureStore();
+    }
     window.signup = sessionAPIUtil.signup;
     window.login = sessionAPIUtil.login;
     window.logout = sessionAPIUtil.logout;

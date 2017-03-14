@@ -7,7 +7,6 @@ class Header extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {modalOpen: false, logIn: false, loggedIn: false};
-		// this.handleClick = this.handleClick.bind(this);
 		this.onModalClose = this.onModalClose.bind(this);
 	}
 
@@ -27,15 +26,18 @@ class Header extends React.Component {
 	render() {
 		const formComponent = (this.state.logIn) ? <SessionFormContainer formType="login" /> : <SessionFormContainer formType="signup" />
 		return (
-			<div>
-				<button id="log-in-button" 
-						onClick={this.handleClick.bind(this, true)}>
-					Log in
-				</button>
-				<button id="sign-up-button"
-						onClick={this.handleClick.bind(this, false)}>
-					Sign up
-				</button>
+			<header>
+				<h1>inQuizitive</h1>
+				<ul className="right-nav">
+					<button id="log-in-button" 
+							onClick={this.handleClick.bind(this, true)}>
+						Log in
+					</button>
+					<button id="sign-up-button"
+							onClick={this.handleClick.bind(this, false)}>
+						Sign up
+					</button>
+				</ul>
 
 				<Modal
 					isOpen={this.state.modalOpen}
@@ -43,7 +45,7 @@ class Header extends React.Component {
 					<button onClick={this.onModalClose}>Close</button>
 					{formComponent}
 				</Modal>
-			</div>
+			</header>
 		);
 	}
 };
