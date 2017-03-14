@@ -13,7 +13,6 @@ class Header extends React.Component {
 	}
 
 	componentDidMount() {
-		debugger
 		this.redirectIfLoggedIn();
 	}
 
