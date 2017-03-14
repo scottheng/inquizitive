@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router';
+import { Link, browserHistory, withRouter } from 'react-router';
 
 class SessionForm extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = { username: "", email: "", password: "" };
-		
+		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
 	componentDidUpdate() {
@@ -14,7 +14,7 @@ class SessionForm extends React.Component {
 
 	redirectIfLoggedIn() {
 		if (this.props.loggedIn) {
-			this.props.router.push("/");
+			browserHistory.push("/");
 		}
 	}
 
@@ -25,7 +25,21 @@ class SessionForm extends React.Component {
 	handleSubmit(e) {
 		e.preventDefault();
 		const user = this.state;
-		this.props.processForm(user);
+		this.props.processForm(user)
+		.then(() => this.redirectIfLoggedIn());
+	}
+
+	renderEmailInput() {
+		if (this.props.formType === 'signup') {
+			return (
+				<label> Email:
+					<input type="text"
+							value={this.state.email}
+							onChange={this.update("email")}
+							className="session-input"/>
+				</label>
+			);
+		}
 	}
 
 	renderErrors() {
@@ -42,6 +56,7 @@ class SessionForm extends React.Component {
 	}
 
 	render() {
+
 		return (
 			<div className="session-form-container">
 				<form onSubmit={this.handleSubmit} className="session-form-box">
@@ -56,6 +71,8 @@ class SessionForm extends React.Component {
 									onChange={this.update("username")}
 									className="session-input" />
 						</label>
+						<br/>
+						{this.renderEmailInput()}
 						<br/>
 						<label> Password:
 							<input type="password"

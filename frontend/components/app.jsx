@@ -1,9 +1,9 @@
 import React from 'react';
-import Header from './header/header';
+import HeaderContainer from './header/header_container';
 
 const App = ({ children }) => (
 	<div>
-		<Header />
+		<HeaderContainer />
 		<h1>inQuizitive</h1>
 		{ children }
 	</div>

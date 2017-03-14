@@ -6,9 +6,13 @@ import Modal from 'react-modal';
 class Header extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {modalOpen: false, logIn: false};
+		this.state = {modalOpen: false, logIn: false, loggedIn: false};
 		// this.handleClick = this.handleClick.bind(this);
 		this.onModalClose = this.onModalClose.bind(this);
+	}
+
+	componentWillReceiveProps(newProps) {
+		this.setState({modalOpen: !newProps.currentUser});
 	}
 
 	handleClick(bool, e) {
