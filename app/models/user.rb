@@ -1,6 +1,6 @@
 class User < ApplicationRecord
 	validates :username, :password_digest, :email, :session_token, presence: true 
-	validates :type, inclusion: { in: $w(STUDENT TEACHER), message: "%{value} is not a valid type" }
+	validates :user_type, inclusion: { in: %w(STUDENT TEACHER), message: "%{value} is not a valid type" }
 	validates :password, length: { minimum: 8, allow_nil: true }
 	after_initialize :ensure_session_token 
 
