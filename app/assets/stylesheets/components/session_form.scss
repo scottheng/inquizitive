@@ -1,12 +1,35 @@
-div.session-form-container {
+.session-form {
+	margin: 0 auto;
 
-	form.session-form-box {
-
-		header {
-			background: #4257B2;
-			font-size: 24px;
-			color: white;
-			position: relative;
-		}
+	label {
+		margin: 20px;
 	}
+}
+.form-title {
+
+	h1 {
+		padding: 20px;
+	}
+}
+
+.session-input {
+	border-bottom: 3px solid $gray;
+	font-size: 20px;
+	width: 91%;
+	margin-left: 20px;
+}
+
+.form-input {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+input[type="submit"] {
+	display: flex;
+	color: white;
+	background: $turquoise;
+	font-size: 20px;
+	padding: 20px 200px;
+	margin: 0 auto;
+	
 }

@@ -14,7 +14,7 @@ class SessionForm extends React.Component {
 
 	redirectIfLoggedIn() {
 		if (this.props.loggedIn) {
-			browserHistory.replace("/");
+			browserHistory.push("/");
 		}
 	}
 
@@ -32,12 +32,16 @@ class SessionForm extends React.Component {
 	renderEmailInput() {
 		if (this.props.formType === 'signup') {
 			return (
-				<label> Email:
+				<div className='form-input'>
 					<input type="text"
 							value={this.state.email}
+							placeholder="Type your email"
 							onChange={this.update("email")}
 							className="session-input"/>
-				</label>
+					<label>
+						EMAIL
+					</label>
+				</div>
 			);
 		}
 	}
@@ -60,26 +64,35 @@ class SessionForm extends React.Component {
 		return (
 			<div className="session-form-container">
 				<form onSubmit={this.handleSubmit} className="session-form-box">
-					<header className='form-title'>{this.props.formType}</header>
+					<header className='form-title'>
+						<h1>{this.props.formType}</h1>
+					</header>
 					<br/>
 					{this.renderErrors()}
 					<div className="session-form">
 						<br/>
-						<label> Username:
+						<div className='form-input'>
 							<input type="text"
 									value={this.state.username}
+									placeholder="Type your username"
 									onChange={this.update("username")}
 									className="session-input" />
-						</label>
-						<br/>
+							<label className="input-label"> 
+								USERNAME
+							</label>
+						</div>
+
 						{this.renderEmailInput()}
-						<br/>
-						<label> Password:
+						<div className='form-input'>
 							<input type="password"
 									value={this.state.password}
+									placeholder="Type your password"
 									onChange={this.update("password")}
 									className="session-input" />
-						</label>
+							<label> 
+								PASSWORD
+							</label>
+						</div>
 						<br/>
 						<input type="submit" value={this.props.formType} />
 					</div>

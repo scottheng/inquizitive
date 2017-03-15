@@ -1,17 +1,9 @@
 .static-header {
-	color: white;
 	display: flex;
 	justify-content: space-between;
-	padding-left: 30px;
-	padding-right: 30px;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	
 	
 	h1 {
 		padding: 20px;
-		font-weight: 400;
-		
 	}
 
 	ul {
@@ -24,11 +16,20 @@
 		margin-top: 13px;
 
 		#sign-up-button {
-			background: #3CCFCF;
+			background: $turquoise;
 			padding-left: 20px;
 			padding-right: 20px;
-
 		}
+
+		#log-out-button {
+			margin-left: auto;
+		}
+
 	}
+
+	#close-modal-button {
+		color: pink;
+	}
+
 
 }

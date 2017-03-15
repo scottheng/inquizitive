@@ -2,7 +2,7 @@ import React from 'react';
 import SessionFormContainer from '../session/session_form_container';
 import Modal from 'react-modal';
 import { browserHistory, Link } from 'react-router';
-// import ModalStyle from '../modal/modal_style';
+import ModalStyle from '../modal/modal_style';
 
 class Header extends React.Component {
 	constructor(props) {
@@ -80,8 +80,9 @@ class Header extends React.Component {
 				{this.renderRightNav()}
 				<Modal
 					isOpen={this.state.modalOpen}
-					onRequestClose={this.onModalClose}>
-					<button onClick={this.onModalClose} className="close-modal-button">Close</button>
+					onRequestClose={this.onModalClose}
+					style={ModalStyle}>
+					<button onClick={this.onModalClose} id="close-modal-button">Close</button>
 					{formComponent}
 				</Modal>
 			</header>
