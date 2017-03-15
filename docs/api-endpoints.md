@@ -68,7 +68,7 @@
 - `DELETE api/flashcard_sets/:id` 
   - returns a deleted flashcard set
 
-### Classes 
+<!--### Classes 
 
 - `GET api/classes`
   - returns index of all classes 
@@ -82,7 +82,7 @@
 - `PATCH api/classes/:id`
   - returns an updated class
 - `DELETE api/classes/:id` 
-  - returns a deleted class
+  - returns a deleted class-->
 
 ### Folders 
 

@@ -27,9 +27,6 @@
 
 **LatestActivityContainer**
  - LatestActivity
-   + WelcomeContainer 
-     + Welcome
-       + WelcomeItem
    + StudySetListContainer 
      + StudySetList 
        + StudySetListItem
@@ -89,10 +86,10 @@
 | "/search/:searchQuery | "SearchContainer" |
 | "/latest" | "LatestActivityContainer" |
 | "/study-sets" | "StudySetIndexContainer" |
-| "/study-sets/:study_setId/study-set" | "StudySetContainer" |
-| "/study-sets/:study_setId/create" | "StudySetFormContainer" |
-| "/study-sets/:study_setId/edit" | "StudySetFormContainer" |
-| "/study-sets/:study_setId/flashcards" | "FlashcardsContainer" |
+| "/study-sets/:studySetId/" | "StudySetContainer" |
+| "/study-sets/create" | "StudySetFormContainer" |
+| "/study-sets/:studySetId/edit" | "StudySetFormContainer" |
+| "/study-sets/:studySetId/flashcards" | "FlashcardsContainer" |
 | "/folders/:folderId" | "FolderContainer" |
 | "/settings/" | "SettingsContainer" |
 
