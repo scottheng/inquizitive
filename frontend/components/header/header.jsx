@@ -36,6 +36,7 @@ class Header extends React.Component {
 
 	onModalClose() {
 		this.setState({modalOpen: false});
+		this.props.clearErrors();
 	}
 
 	redirectHome(e) {
