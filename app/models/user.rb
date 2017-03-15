@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  username        :string           not null
+#  email           :string           not null
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  prof_pic_url    :string
+#  user_type       :string           default("STUDENT")
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
 class User < ApplicationRecord
 	validates :username, :password_digest, :email, :session_token, presence: true 
 	validates :user_type, inclusion: { in: %w(STUDENT TEACHER), message: "%{value} is not a valid type" }
@@ -30,6 +45,10 @@ class User < ApplicationRecord
 		self.save!
 		self.session_token 
 	end
+
+	has_many :cards
+	
+	has_many :study_sets
 	
 	private 
 	def ensure_session_token 
