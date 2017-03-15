@@ -1,0 +1,1 @@
+json.extract! card, :id, :term, :definition, :study_set_id, :starred
