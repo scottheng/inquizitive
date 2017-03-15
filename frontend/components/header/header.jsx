@@ -92,13 +92,16 @@ class Header extends React.Component {
 				<Modal
 					isOpen={this.state.modalOpen}
 					onRequestClose={this.onModalClose}
-					style={ModalStyle}>
-					<button onClick={this.onModalClose} id="close-modal-button">Close</button>
+					style={ModalStyle}
+					contentLabel="session-modal">
+					<button onClick={this.onModalClose} id="close-modal-button">
+						X
+					</button>
 					{formComponent}
 				</Modal>
 			</header>
 		);
 	}
-};
+}
 
 export default Header;
