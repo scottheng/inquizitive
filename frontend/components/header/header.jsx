@@ -10,6 +10,7 @@ class Header extends React.Component {
 		this.state = {modalOpen: false, logIn: false, loggedIn: false};
 		this.onModalClose = this.onModalClose.bind(this);
 		this.redirectHome = this.redirectHome.bind(this);
+		this.handleDemo = this.handleDemo.bind(this);
 	}
 
 	componentDidMount() {
@@ -44,6 +45,12 @@ class Header extends React.Component {
 		.then(() => this.setState({modalOpen: false}));
 	}
 
+	handleDemo() {
+		const demoUser = {username: 'demoUser', password: 'demopassword' };
+		this.props.login(demoUser)
+		.then(() => browserHistory.push('/latest'));
+	}
+
 	renderRightNav() {
 		if (this.props.currentUser) {
 			return (
@@ -57,6 +64,10 @@ class Header extends React.Component {
 		} else {
 			return (
 				<ul className="right-nav">
+					<button id="demo-login"
+							onClick={this.handleDemo}>
+						Demo 
+					</button>
 					<button id="log-in-button" 
 							onClick={this.handleClick.bind(this, true)}>
 						Log in

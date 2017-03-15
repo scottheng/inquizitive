@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Home from './home';
+import Latest from './latest';
 
 const mapStateToProps = (state) => ({
 	currentUser: state.session.currentUser
@@ -7,4 +7,4 @@ const mapStateToProps = (state) => ({
 
 export default connect(
 	mapStateToProps
-)(Home);
+)(Latest);

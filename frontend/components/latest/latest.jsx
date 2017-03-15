@@ -1,9 +1,26 @@
 import React from 'react';
+import { browserHistory } from 'react-router';
 
-const Latest = () => (
-	<div>
-		<h1>This is the latest index page.</h1>
-	</div>
-);
+class Latest extends React.Component {
+
+	componentDidMount() {
+		this.redirectIfLoggedIn();
+	}
+
+	redirectIfLoggedIn() {
+		if (!this.props.currentUser) {
+			browserHistory.push("/");
+		}
+	}
+
+	render() {
+		return(
+			<div>
+				<h1>This is the latest activity page.</h1>
+			</div>
+		);
+	}
+}
+
 
 export default Latest;
