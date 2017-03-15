@@ -60,7 +60,7 @@ class SessionForm extends React.Component {
 		return (
 			<div className="session-form-container">
 				<form onSubmit={this.handleSubmit} className="session-form-box">
-					{this.props.formType}
+					<header className='form-title'>{this.props.formType}</header>
 					<br/>
 					{this.renderErrors()}
 					<div className="session-form">

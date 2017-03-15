@@ -81,7 +81,7 @@ class Header extends React.Component {
 				<Modal
 					isOpen={this.state.modalOpen}
 					onRequestClose={this.onModalClose}>
-					<button onClick={this.onModalClose}>Close</button>
+					<button onClick={this.onModalClose} className="close-modal-button">Close</button>
 					{formComponent}
 				</Modal>
 			</header>

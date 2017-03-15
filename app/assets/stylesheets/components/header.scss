@@ -1,12 +1,11 @@
-header.static-header {
-	background: #4257B2;
-	font-family: Century Gothic;
+.static-header {
 	color: white;
-	height: 100%;
 	display: flex;
 	justify-content: space-between;
 	padding-left: 30px;
 	padding-right: 30px;
+	padding-top: 5px;
+	padding-bottom: 5px;
 	
 	
 	h1 {
