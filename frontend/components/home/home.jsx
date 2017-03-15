@@ -1,3 +1,4 @@
+//need redirect if logged in to latest page
 import React from 'react';
 
 const Home = () => (

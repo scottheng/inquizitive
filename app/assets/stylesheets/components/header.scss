@@ -1,0 +1,36 @@
+header.static-header {
+	background: #4257B2;
+	font-family: Century Gothic;
+	color: white;
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	padding-left: 30px;
+	padding-right: 30px;
+	
+	
+	h1 {
+		font-size: 24px;
+		padding: 20px;
+		font-weight: 400;
+		
+	}
+
+	ul {
+		font-size: 14px;
+		display: flex;
+		justify-content: space-between;
+		align-content: center;
+		width: 150px;
+		height: 40px;
+		margin-top: 13px;
+
+		#sign-up-button {
+			background: #3CCFCF;
+			padding-left: 20px;
+			padding-right: 20px;
+
+		}
+	}
+
+}

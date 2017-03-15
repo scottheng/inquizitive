@@ -1,7 +1,7 @@
 import React from 'react';
 import SessionFormContainer from '../session/session_form_container';
 import Modal from 'react-modal';
-import { browserHistory } from 'react-router';
+import { browserHistory, Link } from 'react-router';
 // import ModalStyle from '../modal/modal_style';
 
 class Header extends React.Component {
@@ -73,8 +73,10 @@ class Header extends React.Component {
 	render() {
 		const formComponent = (this.state.logIn) ? <SessionFormContainer formType="login" /> : <SessionFormContainer formType="signup" />
 		return (
-			<header>
-				<h1>inQuizitive</h1>
+			<header className="static-header">
+				<Link to="/" >
+					<h1 className="main-logo">inQuizitive</h1>
+				</Link>
 				{this.renderRightNav()}
 				<Modal
 					isOpen={this.state.modalOpen}
