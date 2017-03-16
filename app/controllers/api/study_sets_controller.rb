@@ -1,6 +1,11 @@
 class Api::StudySetsController < ApplicationController
 	def index 
-		@study_sets = StudySet.all
+		if params[:user_id]
+			user_id = params[:user_id]
+			@study_sets = StudySet.where("user_id = #{user_id}")
+		else 
+			@study_sets = StudySet.all
+		end
 
 		render 'api/study_sets/index'
 	end
