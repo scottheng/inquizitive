@@ -20,7 +20,7 @@ class Header extends React.Component {
 
 	redirectIfLoggedIn() {
 		if (this.props.currentUser) {
-			browserHistory.push('/latest');
+			browserHistory.push(`/${this.props.currentUser.username}`);
 		}
 	}
 

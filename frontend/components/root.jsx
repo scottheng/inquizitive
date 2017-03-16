@@ -10,7 +10,7 @@ const Root = ({ store }) => (
 		<Router history={browserHistory}>
 			<Route path="/" component={ App } >
 				<IndexRoute component={ HomeContainer } />
-				<Route path="latest" component={ LatestContainer } />
+				<Route path='/:username' component={ LatestContainer } />
 			</Route>
 		</Router>
 

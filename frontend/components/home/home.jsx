@@ -4,13 +4,13 @@ import { browserHistory } from 'react-router';
 
 class Home extends React.Component {
 
-	componentDidMount() {
+	componentWillReceiveProps(newProps) {
 		this.redirectIfLoggedIn();
 	}
 
 	redirectIfLoggedIn() {
 		if (this.props.currentUser) {
-			browserHistory.push("/latest");
+			browserHistory.push(`/${this.props.currentUser.username}`);
 		}
 	}
 

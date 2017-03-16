@@ -1,7 +1,8 @@
 import React from 'react';
 import HeaderContainer from './header/header_container';
 import SidebarContainer from './sidebar/sidebar_container';
-import SortableComponent from './draggable/draggable';
+// import SortableComponent from './draggable/draggable';
+import SplashContainer from './splash/splash';
 
 const App = ({ children }) => (
 	<div>

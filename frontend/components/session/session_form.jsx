@@ -26,7 +26,7 @@ class SessionForm extends React.Component {
 		e.preventDefault();
 		const user = this.state;
 		this.props.processForm(user)
-		.then(() => browserHistory.push('/latest'));
+		.then(newUser => this.props.router.push(`/`));
 	}
 
 	renderEmailInput() {
