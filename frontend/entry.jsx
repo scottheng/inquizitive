@@ -4,6 +4,7 @@ import * as sessionAPIUtil from './util/session_api_util';
 import configureStore from './store/store';
 import Root from './components/root';
 import Modal from 'react-modal';
+import SortableComponent from './components/draggable/draggable';
 
 document.addEventListener('DOMContentLoaded', () => {
     Modal.setAppElement(document.getElementById('root'));
@@ -19,5 +20,5 @@ document.addEventListener('DOMContentLoaded', () => {
     window.logout = sessionAPIUtil.logout;
     window.store = store;
     const root = document.getElementById('root');
-    ReactDOM.render(<Root store={ store } />, root);
+    ReactDOM.render(<Root store={store} />, root);
 });
