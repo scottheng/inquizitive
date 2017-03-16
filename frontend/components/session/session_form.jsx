@@ -8,16 +8,6 @@ class SessionForm extends React.Component {
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
-	componentDidUpdate() {
-		this.redirectIfLoggedIn();
-	}
-
-	redirectIfLoggedIn() {
-		if (this.props.loggedIn) {
-			browserHistory.push("/");
-		}
-	}
-
 	update(field) {
 		return (e) => this.setState({[field]: e.currentTarget.value });
 	}
@@ -26,7 +16,7 @@ class SessionForm extends React.Component {
 		e.preventDefault();
 		const user = this.state;
 		this.props.processForm(user)
-		.then(newUser => this.props.router.push(`/`));
+		.then(action => this.props.router.push(`/${action.currentUser.username}`));
 	}
 
 	renderEmailInput() {

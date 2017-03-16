@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import Splash from './splash';
 
 const mapStateToProps = state => ({
-	currentUser: state.currentUser
+	currentUser: state.session.currentUser
 });
 
 export default connect(

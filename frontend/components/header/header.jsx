@@ -1,7 +1,7 @@
 import React from 'react';
 import SessionFormContainer from '../session/session_form_container';
 import Modal from 'react-modal';
-import { browserHistory, Link } from 'react-router';
+import { browserHistory, Link, withRouter } from 'react-router';
 import ModalStyle from '../modal/modal_style';
 
 class Header extends React.Component {
@@ -13,20 +13,20 @@ class Header extends React.Component {
 		this.handleDemo = this.handleDemo.bind(this);
 	}
 
-	componentDidMount() {
-		this.redirectIfLoggedIn();
-	}
+	// componentDidMount() {
+	// 	this.redirectIfLoggedIn();
+	// }
 
 
-	redirectIfLoggedIn() {
-		if (this.props.currentUser) {
-			browserHistory.push(`/${this.props.currentUser.username}`);
-		}
-	}
+	// redirectIfLoggedIn() {
+	// 	if (this.props.currentUser) {
+	// 		browserHistory.push(`/${this.props.currentUser.username}`);
+	// 	}
+	// }
 
 	componentWillReceiveProps(newProps) {
 		this.setState({modalOpen: !newProps.currentUser});
-		this.redirectIfLoggedIn();
+		// this.redirectIfLoggedIn();
 	}
 
 	handleClick(bool, e) {
@@ -49,7 +49,7 @@ class Header extends React.Component {
 	handleDemo() {
 		const demoUser = {username: 'demoUser', password: 'demopassword' };
 		this.props.login(demoUser)
-		.then(() => browserHistory.push('/latest'));
+		.then(() => this.props.router.push('/demoUser'));
 	}
 
 	renderRightNav() {
@@ -105,4 +105,4 @@ class Header extends React.Component {
 	}
 }
 
-export default Header;
+export default withRouter(Header);
