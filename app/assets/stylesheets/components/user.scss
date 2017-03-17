@@ -21,9 +21,13 @@ div.user-homepage {
 
 nav.user-nav {
 	background: $nav-gray;
-	display: flex;
 	
-	li {
+	ul {
+		display: flex;
 		font-size: 18px;
+
+		li {
+			padding: 10px;
+		}
 	}
 }

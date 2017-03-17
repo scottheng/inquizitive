@@ -37,6 +37,7 @@ class User extends React.Component {
 							</li>
 						</ul>
 					</nav>
+					<h2>You have created this many sets</h2>
 
 				</div>
 			</div>
