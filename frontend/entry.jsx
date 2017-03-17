@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as sessionAPIUtil from './util/session_api_util';
+import * as studySetsAPIUtil from './util/study_sets_api_util';
+import { fetchStudySets } from './actions/study_set_actions';
 import configureStore from './store/store';
 import Root from './components/root';
 import Modal from 'react-modal';
@@ -18,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.signup = sessionAPIUtil.signup;
     window.login = sessionAPIUtil.login;
     window.logout = sessionAPIUtil.logout;
+    window.fetchStudySets = fetchStudySets;
     window.store = store;
     const root = document.getElementById('root');
     ReactDOM.render(<Root store={store} />, root);

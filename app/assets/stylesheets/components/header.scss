@@ -19,6 +19,10 @@
 			background: $turquoise;
 			padding-left: 20px;
 			padding-right: 20px;
+
+			&:hover {
+				background: $yellow;
+			}
 		}
 
 		#log-out-button {

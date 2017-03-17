@@ -3,18 +3,32 @@ import { browserHistory, Link } from 'react-router';
 import SidebarContainer from '../sidebar/sidebar_container';
 
 class User extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {studySets: this.props.studySets};
+	}
 
-	// componentDidMount() {
-	// 	this.redirectUnlessLoggedIn();
-	// }
+	componentDidMount() {
+		if (this.props.studySets) {
+			this.props.fetchStudySets();
+		}
+	}
 
-	// redirectUnlessLoggedIn() {
-	// 	if (this.props.currentUser) {
-	// 		browserHistory.push('/');
-	// 	}
-	// }
+	componentWillReceiveProps(newProps) {
+		this.setState({studySets: newProps.studySets});
+	}
 
 	render() {
+
+		const allStudySets = this.state.studySets.map((studySet, idx) => (
+			<li key={`study-set-${idx}`}>
+				<Link to="study-set/show" className="study-sets-list-item">
+					<h2>{studySet.title}</h2>
+					<h3>Number of terms(get number of cards for this study set)</h3>
+				</Link>
+			</li>
+		));
+
 		return (
 			<div className="user-homepage">
 				<SidebarContainer />
@@ -42,24 +56,7 @@ class User extends React.Component {
 					</div>
 					<div className="study-sets-list">
 						<ul>
-							<li>
-								<Link to="study-set/show" className="study-sets-list-item">
-									<h2>Study set title</h2>
-									<h3>Number of terms</h3>
-								</Link>
-							</li>
-							<li>
-								<Link to="study-set/show" className="study-sets-list-item">
-									<h2>Study set title</h2>
-									<h3>Number of terms</h3>
-								</Link>
-							</li>
-							<li>
-								<Link to="study-set/show" className="study-sets-list-item">
-									<h2>Study set title</h2>
-									<h3>Number of terms</h3>
-								</Link>
-							</li>
+							{allStudySets}
 						</ul>
 					</div>
 
