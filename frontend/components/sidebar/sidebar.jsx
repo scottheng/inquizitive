@@ -1,24 +1,27 @@
-//need redirect if logged in to latest page
 import React from 'react';
-import { browserHistory } from 'react-router';
+import { browserHistory, Link } from 'react-router';
 
 class Sidebar extends React.Component {
-
-	// componentDidMount() {
-	// 	this.redirectIfLoggedIn();
-	// }
-
-	// redirectIfLoggedIn() {
-	// 	if (this.props.currentUser) {
-	// 		browserHistory.push("/latest");
-	// 	}
-	// }
 
 	renderSidebar() {
 		if (this.props.currentUser) {
 			return(
 				<aside className="sidebar">
 					<h1>This is the sidebar.</h1>
+					<ul className="top-sidebar">
+						<li>
+							<Link to="/study-sets" >
+								Your Study Sets
+							</Link>
+						</li>
+						<li>
+							<Link to="/settings" >
+								Settings 
+							</Link>
+						</li>
+					</ul>
+
+					
 				</aside>
 			);
 		}

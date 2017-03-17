@@ -1,12 +1,44 @@
 import React from 'react';
-import { browserHistory } from 'react-router';
+import { browserHistory, Link } from 'react-router';
+import SidebarContainer from '../sidebar/sidebar_container';
 
 class User extends React.Component {
+
+	// componentDidMount() {
+	// 	this.redirectUnlessLoggedIn();
+	// }
+
+	// redirectUnlessLoggedIn() {
+	// 	if (this.props.currentUser) {
+	// 		browserHistory.push('/');
+	// 	}
+	// }
 
 	render() {
 		return (
 			<div className="user-homepage">
-				<h1>This is the user's home page.</h1>
+				<SidebarContainer />
+
+				<div className="main-content">
+					<header>
+						<h1>{this.props.currentUser.username}</h1>
+					</header>
+					<nav className="user-nav">
+						<ul className="user-nav-links">
+							<li>
+								<Link to="fixthis" >
+									Created
+								</Link>
+							</li>
+							<li>
+								<Link to="folders" >
+									Folders
+								</Link>
+							</li>
+						</ul>
+					</nav>
+
+				</div>
 			</div>
 		);
 	}

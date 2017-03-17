@@ -1,0 +1,29 @@
+div.user-homepage {
+	display: flex;
+	justify-content: flex-start;
+	background: $background-gray;
+	height: 100vh;
+
+	aside.sidebar{
+		background: white;
+		font-size: 24px;
+	}
+
+	div.main-content {
+		background: $light-gray;
+		width: 100vw;
+		
+		header {
+			background: $dark-gray;
+		}
+	}
+}
+
+nav.user-nav {
+	background: $nav-gray;
+	display: flex;
+	
+	li {
+		font-size: 18px;
+	}
+}

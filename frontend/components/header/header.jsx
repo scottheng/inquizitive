@@ -14,6 +14,7 @@ class Header extends React.Component {
 	}
 
 	// componentDidMount() {
+	// 	debugger
 	// 	this.redirectIfLoggedIn();
 	// }
 
@@ -25,7 +26,7 @@ class Header extends React.Component {
 	// }
 
 	componentWillReceiveProps(newProps) {
-		this.setState({modalOpen: !newProps.currentUser});
+		this.setState({modalOpen: false});
 		// this.redirectIfLoggedIn();
 	}
 
@@ -41,9 +42,12 @@ class Header extends React.Component {
 
 	redirectHome(e) {
 		e.preventDefault();
-		this.props.logout()
-		.then(() => browserHistory.push('/'))
-		.then(() => this.setState({modalOpen: false}));
+		browserHistory.push('/');
+		this.setState({modalOpen: false});
+		this.props.logout();
+		// browserHistory.push('/');
+		// .then(() => this.setState({modalOpen: false}))
+		// .then(() => browserHistory.push('/'));
 	}
 
 	handleDemo() {

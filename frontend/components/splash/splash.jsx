@@ -4,7 +4,7 @@ import HeaderContainer from '../header/header_container';
 
 class Splash extends React.Component {
 
-	componentDidMount() {
+	componentWillReceiveProps() {
 		this.redirectIfLoggedIn();
 	}
 
