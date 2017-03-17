@@ -5,6 +5,7 @@ import App from './app';
 import SplashContainer from './splash/splash_container';
 import UserContainer from './user/user_container';
 import HeaderContainer from './header/header';
+import StudySetShowContainer from './studysets/study_set_show_container';
 
 
 const Root = ({ store }) => {
@@ -29,6 +30,7 @@ const Root = ({ store }) => {
 				<Route path="/" component={ App }  >
 					<IndexRoute component={ SplashContainer} />
 					<Route path='/:username' component={ UserContainer } onEnter={_ensureLoggedIn}  />
+					<Route path='/study-sets/show' component={ StudySetShowContainer } />
 				</Route>
 			</Router>
 

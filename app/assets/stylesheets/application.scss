@@ -18,9 +18,11 @@
 @import "base/colors.scss";
 @import "base/fonts.scss";
 @import "base/layout.scss";
+@import "base/grid.scss";
 
 @import "components/header.scss";
 @import "components/modal.scss";
 @import "components/session_form.scss";
 @import "components/user";
 @import "components/sidebar";
+@import "components/study_set_show.scss";

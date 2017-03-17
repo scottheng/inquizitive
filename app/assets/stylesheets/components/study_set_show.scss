@@ -1,0 +1,53 @@
+div.study-set-show {
+	display: flex;
+	flex-direction: column;
+	background: $background-gray;
+	height: 100vh;
+
+
+}
+
+div.show-page-header {
+	background: white;
+	height: 300px;
+	color: $gray;
+
+	h1 {
+		font-size: 60px;
+		font-weight: bold;
+	}
+
+	p {
+		font-size: 18px;
+	}
+}
+
+
+
+div.study-set-cards-list {
+	ul {
+		display: flex;
+		flex-direction: column;
+		width: 800px;
+		margin-top: 20px;
+		margin-left: 20px;
+
+		li {
+			background: white;
+			margin: 20px;
+			height: 100px;
+		}
+
+	}
+}
+
+div.add-remove-terms{
+	display: flex;
+	justify-content: center;
+	
+	#add-remove-terms-button {
+		background: $turquoise;
+		padding: 20px;
+	}
+
+}

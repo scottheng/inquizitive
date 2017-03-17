@@ -25,9 +25,45 @@ nav.user-nav {
 	ul {
 		display: flex;
 		font-size: 18px;
+		margin-left: 150px;
 
 		li {
 			padding: 10px;
 		}
 	}
+}
+
+div.term-count {
+	display: flex;
+	justify-content: flex-start;
+	border-bottom: 3px solid $blue;
+	border-right: 1px solid $gray;
+	width: 800px;
+
+	h2 {
+		padding: 10px;
+	}
+}
+
+div.study-sets-list {
+	display: flex;
+	justify-content: flex-start;
+	width: 800px;
+	border-right: 1px solid $gray;
+
+	h2 {
+		color: $blue;
+		padding: 10px;
+		padding-left: 20px;
+	}
+
+}
+
+a.study-sets-list-item {
+	display: flex;
+
+	&:hover {
+		background: $nav-gray;
+	}
+	
 }

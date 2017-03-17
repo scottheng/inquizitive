@@ -37,7 +37,31 @@ class User extends React.Component {
 							</li>
 						</ul>
 					</nav>
-					<h2>You have created this many sets</h2>
+					<div className="term-count">
+						<h2>You have created this many sets</h2>
+					</div>
+					<div className="study-sets-list">
+						<ul>
+							<li>
+								<Link to="study-set/show" className="study-sets-list-item">
+									<h2>Study set title</h2>
+									<h3>Number of terms</h3>
+								</Link>
+							</li>
+							<li>
+								<Link to="study-set/show" className="study-sets-list-item">
+									<h2>Study set title</h2>
+									<h3>Number of terms</h3>
+								</Link>
+							</li>
+							<li>
+								<Link to="study-set/show" className="study-sets-list-item">
+									<h2>Study set title</h2>
+									<h3>Number of terms</h3>
+								</Link>
+							</li>
+						</ul>
+					</div>
 
 				</div>
 			</div>
