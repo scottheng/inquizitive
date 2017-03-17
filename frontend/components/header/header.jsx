@@ -1,7 +1,7 @@
 import React from 'react';
 import SessionFormContainer from '../session/session_form_container';
 import Modal from 'react-modal';
-import { browserHistory, Link, withRouter } from 'react-router';
+import { hashHistory, Link, withRouter } from 'react-router';
 import ModalStyle from '../modal/modal_style';
 
 class Header extends React.Component {
@@ -21,7 +21,7 @@ class Header extends React.Component {
 
 	// redirectIfLoggedIn() {
 	// 	if (this.props.currentUser) {
-	// 		browserHistory.push(`/${this.props.currentUser.username}`);
+	// 		hashHistory.push(`/${this.props.currentUser.username}`);
 	// 	}
 	// }
 
@@ -42,12 +42,12 @@ class Header extends React.Component {
 
 	redirectHome(e) {
 		e.preventDefault();
-		browserHistory.push('/');
+		hashHistory.push('/');
 		this.setState({modalOpen: false});
 		this.props.logout();
-		// browserHistory.push('/');
+		// hashHistory.push('/');
 		// .then(() => this.setState({modalOpen: false}))
-		// .then(() => browserHistory.push('/'));
+		// .then(() => hashHistory.push('/'));
 	}
 
 	handleDemo() {

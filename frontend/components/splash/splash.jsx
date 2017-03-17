@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter, browserHistory } from 'react-router';
+import { withRouter, hashHistory } from 'react-router';
 import HeaderContainer from '../header/header_container';
 
 class Splash extends React.Component {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { browserHistory, Link } from 'react-router';
+import { hashHistory, Link } from 'react-router';
 
 class Sidebar extends React.Component {
 

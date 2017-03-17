@@ -26,7 +26,7 @@ class Api::StudySetsController < ApplicationController
 		
 	end
 	
-	def edit 
+	def update 
 		@study_set = StudySet.find_by_id(params[:id])
 
 		if @study_set.update(study_set_params)
@@ -46,7 +46,7 @@ class Api::StudySetsController < ApplicationController
 	
 	private 
 	def study_set_params 
-		params.require(:study_set).permit([:title, :user_id])
+		params.require(:study_set).permit([:title, :description, :user_id])
 	end
 	
 end

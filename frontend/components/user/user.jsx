@@ -1,5 +1,5 @@
 import React from 'react';
-import { browserHistory, Link } from 'react-router';
+import { hashHistory, Link } from 'react-router';
 import SidebarContainer from '../sidebar/sidebar_container';
 
 class User extends React.Component {
@@ -22,7 +22,7 @@ class User extends React.Component {
 
 		const allStudySets = this.state.studySets.map((studySet, idx) => (
 			<li key={`study-set-${idx}`}>
-				<Link to="study-set/show" className="study-sets-list-item">
+				<Link to={`/study-sets/${studySet.id}`} className="study-sets-list-item">
 					<h2>{studySet.title}</h2>
 					<h3>Number of terms(get number of cards for this study set)</h3>
 				</Link>

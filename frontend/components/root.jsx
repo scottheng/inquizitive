@@ -28,7 +28,7 @@ const Root = ({ store }) => {
 		<Provider store={ store }>
 			<Router history={hashHistory}>
 				<Route path="/" component={ App }  >
-					<IndexRoute component={ SplashContainer} />
+					<IndexRoute component={ SplashContainer}  />
 					<Route path='/:username' component={ UserContainer } onEnter={_ensureLoggedIn}  />
 					<Route path='/study-sets/:studySetId' component={ StudySetShowContainer } />
 				</Route>

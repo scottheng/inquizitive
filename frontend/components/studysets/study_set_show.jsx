@@ -13,8 +13,11 @@ class StudySetShow extends React.Component {
 
 	}
 
-	componentWillReceiveProps(newProps) {
-		this.setState(this.props.studySet);
+	componentWillReceiveProps(nextProps) {
+		if (this.props.params.studySetId !== nextProps.params.studySetId) {
+			this.props.fetchStudySet(parseInt(nextProps.params.studySetId));
+		}
+		this.setState(nextProps.studySet);
 	}
 
 	render() {
