@@ -6,3 +6,11 @@ export const fetchStudySets = (userId) => (
 	})
 );
 
+export const fetchStudySet = (id) => (
+	$.ajax({
+		method: 'GET',
+		url: `api/study_sets/${id}`,
+		dataType: "json"
+	})
+);
+

@@ -1,8 +1,21 @@
 import React from 'react';
-import { browserHistory, Link } from 'react-router';
+import { hashHistory, Link } from 'react-router';
 
 
 class StudySetShow extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = this.props.studySet;
+	}
+
+	componentDidMount() {
+		this.props.fetchStudySet(parseInt(this.props.params.studySetId));
+
+	}
+
+	componentWillReceiveProps(newProps) {
+		this.setState(this.props.studySet);
+	}
 
 	render() {
 		return (
@@ -11,8 +24,8 @@ class StudySetShow extends React.Component {
 				<div className="show-page-header">
 
 					<div className="study-set-info">
-						<h1>Study Set Title goes here</h1>
-						<p>Study set description goes here</p>
+						<h1>{this.state.title}</h1>
+						<p>{this.state.description}</p>
 					</div>
 				
 				</div>

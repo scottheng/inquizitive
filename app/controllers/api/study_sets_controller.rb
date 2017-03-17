@@ -12,7 +12,6 @@ class Api::StudySetsController < ApplicationController
 	
 	def show 
 		@study_set = StudySet.find_by_id(params[:id])
-
 		render 'api/study_sets/show'
 	end
 	

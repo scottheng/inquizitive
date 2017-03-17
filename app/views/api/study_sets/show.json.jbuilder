@@ -1,4 +1,4 @@
-json.extract! @study_set, :id, :title 
+json.extract! @study_set, :id, :title, :description
 
 json.cards do 
 	json.array! @study_set.cards, partial: 'api/cards/card', as: :card
