@@ -6,6 +6,7 @@ import SplashContainer from './splash/splash_container';
 import UserContainer from './user/user_container';
 import HeaderContainer from './header/header';
 import StudySetShowContainer from './studysets/study_set_show_container';
+import StudySetFormContainer from './studysets/study_set_form_container';
 
 
 const Root = ({ store }) => {
@@ -31,6 +32,8 @@ const Root = ({ store }) => {
 					<IndexRoute component={ SplashContainer}  />
 					<Route path='/:username' component={ UserContainer } onEnter={_ensureLoggedIn}  />
 					<Route path='/study-sets/:studySetId' component={ StudySetShowContainer } />
+					<Route path='/:username/study-sets/new' component={ StudySetFormContainer } />
+					<Route path='/study-sets/:studySetId/edit' component={ StudySetFormContainer } />
 				</Route>
 			</Router>
 

@@ -22,7 +22,7 @@ class Api::CardsController < ApplicationController
 		
 	end
 	
-	def edit 
+	def update
 		@card = Card.find_by_id(params[:id])
 
 		if @card.update(card_params)

@@ -9,6 +9,7 @@ class StudySetShow extends React.Component {
 	}
 
 	componentDidMount() {
+
 		this.props.fetchStudySet(parseInt(this.props.params.studySetId));
 
 	}
