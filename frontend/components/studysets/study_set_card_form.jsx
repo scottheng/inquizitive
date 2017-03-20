@@ -4,7 +4,10 @@ const StudySetCardForm = (props) => (
 	<div className="card-form">
 		<h2>{props.index + 1}</h2>
 		<label>
-			<input type="text" onChange={props.update('term')} placeholder="Enter term" />
+			<input type="text" 
+					onChange={props.update('term')} 
+					placeholder="Enter term"
+					/>
 			<br/>
 			TERM
 		</label>

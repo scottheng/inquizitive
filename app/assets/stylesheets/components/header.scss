@@ -2,6 +2,7 @@
 	display: flex;
 	justify-content: space-between;
 	
+	
 	h1 {
 		padding: 20px;
 	}
@@ -27,6 +28,10 @@
 
 		#log-out-button {
 			margin-left: auto;
+
+			&:hover {
+				color: $light-gray;
+			}
 		}
 
 	}
@@ -36,4 +41,15 @@
 	}
 
 
+}
+
+div.middle-nav {
+	display: flex;
+	align-content: center;
+	
+	h2 {
+		font-size: 15px;
+		font-weight: 100;
+		margin-top: 25px;
+	}
 }

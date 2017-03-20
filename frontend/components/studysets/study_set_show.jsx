@@ -33,10 +33,21 @@ class StudySetShow extends React.Component {
 			<div className="study-set-show">
 
 				<div className="show-page-header">
-
+					<div className="study-set-subinfo">
+						<h3>{studySet.cards.length} terms</h3>
+						<br/>
+						<Link to={`/${this.props.currentUser.username}`}>
+							<h4>{this.props.currentUser.username}</h4>
+						</Link>
+					</div>
 					<div className="study-set-info">
 						<h1>{studySet.title}</h1>
 						<p>{studySet.description}</p>
+					</div>
+					<div className="study-set-header-nav">
+						<ul>
+							<li>Edit</li>
+						</ul>
 					</div>
 				
 				</div>

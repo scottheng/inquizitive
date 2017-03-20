@@ -52,7 +52,7 @@ class User extends React.Component {
 						</ul>
 					</nav>
 					<div className="term-count">
-						<h2>You have created this many sets</h2>
+						<h2>You have created {this.props.studySetsCount} sets</h2>
 					</div>
 					<div className="study-sets-list">
 						<ul>

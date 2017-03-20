@@ -9,7 +9,6 @@ class StudySetForm extends React.Component {
 	}
 
 	componentDidMount() {
-
 		if (this.props.params.studySetId) {
 			this.props.fetchStudySet(parseInt(this.props.params.studySetId));
 
@@ -17,6 +16,9 @@ class StudySetForm extends React.Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
+		if (this.props.params.studySetId !== nextProps.params.studySetId) {
+			this.props.fetchStudySet(parseInt(nextProps.params.studySetId));
+		}
 		this.setState({studySet: nextProps.studySet});
 
 	}
@@ -61,7 +63,7 @@ class StudySetForm extends React.Component {
 
 	render() {
 		const cardForms = this.state.cards.map((card, idx) => (
-			<StudySetCardForm data={this.state.cards[idx]} 
+			<StudySetCardForm card={this.state.cards[idx]} 
 								update={this.updateCard(idx).bind(this)}
 								index={idx} />
 		));

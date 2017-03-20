@@ -16,10 +16,34 @@ div.show-page-header {
 	h1 {
 		font-size: 60px;
 		font-weight: bold;
+		padding-left: 20px;
+		padding-top: 0px;
 	}
 
 	p {
 		font-size: 18px;
+	}
+}
+
+div.study-set-subinfo {
+	display: flex;
+	justify-content: flex-start;
+	
+	margin-left: 20px;
+	margin-top: 20px;
+	font-size: 14px;
+
+	h3 {
+		padding-right: 20px;
+		border-right: 2px solid $light-gray;
+	}
+	a {
+		padding-left: 20px;
+		color: $turquoise;
+
+		h4 {
+			margin-top: 17px;
+		}
 	}
 }
 

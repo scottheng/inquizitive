@@ -93,9 +93,11 @@ class Header extends React.Component {
 				<Link to="/" >
 					<h1 className="main-logo">inQuizitive</h1>
 				</Link>
-				<Link to={`/${this.props.currentUser.username}/study-sets/new`} >
-					<h2>Create</h2>
-				</Link>
+				<div className="middle-nav" >
+					<Link to={`/${this.props.currentUser.username}/study-sets/new`} >
+						<h2>Create</h2>
+					</Link>
+				</div>
 				{this.renderRightNav()}
 				<Modal
 					isOpen={this.state.modalOpen}
