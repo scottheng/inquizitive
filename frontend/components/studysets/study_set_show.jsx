@@ -21,6 +21,12 @@ class StudySetShow extends React.Component {
 
 	}
 
+	deleteStudySet(e) {
+		e.preventDefault();
+		this.props.deleteStudySet(this.props.params.studySetId)
+		.then(hashHistory.push(`/${this.props.currentUser.username}`));
+	}
+
 	render() {
 
 		const {studySet} = this.props;
@@ -55,7 +61,7 @@ class StudySetShow extends React.Component {
 								<Link to={`/`}>+</Link>
 
 							</button>
-							<button>
+							<button onClick={this.deleteStudySet.bind(this)}>
 								<Link to={`/`}>
 									<span className="fa fa-trash"></span>
 								</Link>

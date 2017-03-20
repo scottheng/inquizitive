@@ -18,10 +18,15 @@ class StudySetForm extends React.Component {
 	componentWillReceiveProps(nextProps) {
 		if (this.props.params.studySetId !== nextProps.params.studySetId) {
 			this.props.fetchStudySet(parseInt(nextProps.params.studySetId));
+		
 		}
 		this.setState({studySet: nextProps.studySet});
+		if (this.props.params.studySetId) {
+			this.setState({cards: nextProps.studySet.cards});
+		} else {
+			this.setState({cards: nextProps.cards});
+		}
 		debugger
-		this.setState({cards: nextProps.studySet.cards});
 
 	}
 
@@ -54,16 +59,18 @@ class StudySetForm extends React.Component {
 	}
 
 	handleSubmit(e) {
+		debugger
 		e.preventDefault();
 		this.props.submitStudySet(this.state.studySet)
 		.then(newStudySetAction => this.state.cards.map(card => {
 			card["study_set_id"] = newStudySetAction.studySet.id;
-			this.props.createCard(card)
+			this.props.submitCard(card)
 		.then(hashHistory.push(`/study-sets/${this.props.studySet.id}`));
 		}));
 	}
 
 	render() {
+		debugger
 		const cardForms = this.state.cards.map((card, idx) => (
 			<StudySetCardForm card={this.state.cards[idx]} 
 								update={this.updateCard(idx).bind(this)}

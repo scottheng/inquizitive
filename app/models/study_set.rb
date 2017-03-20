@@ -15,5 +15,5 @@ class StudySet < ApplicationRecord
 	validates :title, :user_id, :visitable_option, :editable_option, presence: true
 
 	belongs_to :user
-	has_many :cards
+	has_many :cards, dependent: :destroy
 end
