@@ -23,7 +23,7 @@ div.study-set-description {
 
 div.study-set-cards-form {
 	background: $background-gray;
-	
+	padding-bottom: 20px;
 }
 
 ul.cards-form-list {
@@ -44,5 +44,44 @@ div.card-form {
 	input {
 		border-bottom: 2px solid $gray;
 		width: 400px;
+	}
+}
+
+button.add-card {
+	background: white;
+	display: flex;
+	justify-content: center;
+	width: 1000px;
+	margin: 0 auto;
+	padding: 20px;
+	margin-top: 20px;
+	margin-left: 120px;
+	
+	h2 {
+		font-size: 18px;
+		padding-bottom: 10px;
+		border-bottom: 5px solid $turquoise;
+	}
+
+	&:hover {
+		color: $yellow;
+		
+	}
+
+}
+
+button.create {
+	background: $turquoise;
+	color: white;
+	font-size: 18px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 80px;
+	padding-right: 80px;
+	margin-left: 950px;
+
+	&:hover {
+		background: $yellow;
+		color: $gray;
 	}
 }

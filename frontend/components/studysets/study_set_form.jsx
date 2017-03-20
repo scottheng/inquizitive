@@ -1,4 +1,5 @@
 import React from 'react';
+import { hashHistory } from 'react-router';
 import StudySetCardForm from './study_set_card_form';
 
 class StudySetForm extends React.Component {
@@ -53,7 +54,8 @@ class StudySetForm extends React.Component {
 		this.props.createStudySet(this.state.studySet)
 		.then(newStudySetAction => this.state.cards.map(card => {
 			card["study_set_id"] = newStudySetAction.studySet.id;
-			this.props.createCard(card);
+			this.props.createCard(card)
+		.then(hashHistory.push(`/study-sets/${this.props.studySet.id}`));
 		}));
 	}
 
@@ -83,9 +85,13 @@ class StudySetForm extends React.Component {
 					<ul className="cards-form-list">
 						{cardForms}
 					</ul>
-					<button onClick={this.addCard.bind(this)}>Add Card</button>
-
-					<button onClick={this.handleSubmit.bind(this)}>Create</button>
+					<button onClick={this.addCard.bind(this)}
+							className="add-card">
+							<h2>+  ADD CARD</h2>
+					</button>
+					<br/>
+					<button onClick={this.handleSubmit.bind(this)}
+							className="create">Create</button>
 				</div>
 
 			</div>
