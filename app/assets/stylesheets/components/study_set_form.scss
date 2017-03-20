@@ -1,0 +1,48 @@
+div.study-set-form {
+	display: flex;
+	flex-direction: column;
+
+	input {
+		font-size: 18px;
+	}
+}
+
+div.study-set-description {
+	display: flex;
+	flex-direction: column;
+	input {
+		padding-bottom: 5px;
+		border-bottom: 3px solid $gray;
+		width: 500px;
+	}
+	label {
+		margin-left: 20px;
+	}
+	padding-bottom: 20px;
+}
+
+div.study-set-cards-form {
+	background: $background-gray;
+	
+}
+
+ul.cards-form-list {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+div.card-form {
+	background: white;
+	display: flex;
+	justify-content: space-around;
+	width: 1000px;
+	margin: 0 auto;
+	margin-top: 20px;
+	padding: 20px;
+
+	input {
+		border-bottom: 2px solid $gray;
+		width: 400px;
+	}
+}
