@@ -21,6 +21,33 @@ div.study-set-description {
 	padding-bottom: 20px;
 }
 
+div.study-set-description-header {
+	display: flex;
+	justify-content: space-between;
+	align-content: flex-end;
+
+	h1 {
+		font-weight: 900;
+		font-size: 28px;
+		
+	}
+
+	button {
+		background: $turquoise;
+		color: white;
+		font-size: 15px;
+		margin-top: 15px;
+		margin-bottom: 15px;
+		margin-right: 40px;
+		padding-left: 20px;
+		padding-right: 20px;
+
+		&:hover {
+			background: $yellow;
+			color: $gray;
+		}
+	}
+}
 div.study-set-cards-form {
 	background: $background-gray;
 	padding-bottom: 20px;

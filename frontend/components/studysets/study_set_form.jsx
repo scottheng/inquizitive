@@ -69,7 +69,11 @@ class StudySetForm extends React.Component {
 		return (
 			<div className="study-set-form">
 				<div className="study-set-description">
-					<h1>Create a new study set</h1>
+					<div className="study-set-description-header">
+						<h1>Create a new study set</h1>
+						<button onClick={this.handleSubmit.bind(this)}>Create</button>
+					</div>
+						
 					<label>
 						<input type="text" 
 								placeholder="Subject, chapter, unit" 
