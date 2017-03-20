@@ -13,21 +13,9 @@ class Header extends React.Component {
 		this.handleDemo = this.handleDemo.bind(this);
 	}
 
-	// componentDidMount() {
-	// 	debugger
-	// 	this.redirectIfLoggedIn();
-	// }
-
-
-	// redirectIfLoggedIn() {
-	// 	if (this.props.currentUser) {
-	// 		hashHistory.push(`/${this.props.currentUser.username}`);
-	// 	}
-	// }
 
 	componentWillReceiveProps(newProps) {
 		this.setState({modalOpen: false});
-		// this.redirectIfLoggedIn();
 	}
 
 	handleClick(bool, e) {
@@ -42,10 +30,9 @@ class Header extends React.Component {
 
 	redirectHome(e) {
 		e.preventDefault();
-		hashHistory.push('/');
 		this.setState({modalOpen: false});
-		this.props.logout();
-		// hashHistory.push('/');
+		this.props.logout()
+		.then(() => hashHistory.push('/'));
 		// .then(() => this.setState({modalOpen: false}))
 		// .then(() => hashHistory.push('/'));
 	}
@@ -88,17 +75,36 @@ class Header extends React.Component {
 
 	render() {
 		const formComponent = (this.state.logIn) ? <SessionFormContainer formType="login" /> : <SessionFormContainer formType="signup" />
+		
+		const createButton = () => {
+			if (this.props.currentUser) {
+				return (
+					<Link to={`/:username/study-sets/new`} >
+						<span className="fa fa-plus-square">
+						</span>
+						<h2>Create</h2>
+					</Link>
+				);
+			}
+			else {
+				return (
+					<button id="log-in-button" 
+							onClick={this.handleClick.bind(this, true)}>
+						<span className="fa fa-plus-square">
+						</span>
+						<h2>Create</h2>
+					</button>
+				);
+			}
+		};
+
 		return (
 			<header className="static-header">
 				<Link to="/" >
 					<h1 className="main-logo">inQuizitive</h1>
 				</Link>
 				<div className="middle-nav" >
-					<Link to={`/:username/study-sets/new`} >
-						<span className="fa fa-plus-square">
-						</span>
-						<h2>Create</h2>
-					</Link>
+					{createButton()}
 				</div>
 				{this.renderRightNav()}
 				<Modal

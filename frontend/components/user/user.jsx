@@ -8,6 +8,7 @@ class User extends React.Component {
 		this.state = {studySets: this.props.studySets};
 	}
 
+
 	componentDidMount() {
 		if (this.props.studySets) {
 			this.props.fetchStudySets(this.props.currentUser.id);
@@ -29,13 +30,21 @@ class User extends React.Component {
 			</li>
 		));
 
+		const username = () => {
+			if (this.props.currentUser) {
+				return (
+					<h1>{this.props.currentUser.username}</h1>
+				);
+			}
+		};
+
 		return (
 			<div className="user-homepage">
 				<SidebarContainer />
 
 				<div className="main-content">
 					<header>
-						<h1>{this.props.currentUser.username}</h1>
+						{username()}
 					</header>
 					<nav className="user-nav">
 						<ul className="user-nav-links">

@@ -4,11 +4,20 @@ import HeaderContainer from '../header/header_container';
 
 class Splash extends React.Component {
 
+	componentWillMount() {
+		debugger
+		if (!this.props.currentUser) {
+			hashHistory.push('/');
+		}
+	}
+
 	componentWillReceiveProps() {
+		debugger
 		this.redirectIfLoggedIn();
 	}
 
 	redirectIfLoggedIn() {
+		debugger
 		if (this.props.currentUser) {
 			this.props.router.push(`/${this.props.currentUser.username}`);
 		}

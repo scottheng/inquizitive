@@ -24,7 +24,7 @@ class StudySetShow extends React.Component {
 	deleteStudySet(e) {
 		e.preventDefault();
 		this.props.deleteStudySet(this.props.params.studySetId)
-		.then(hashHistory.push(`/${this.props.currentUser.username}`));
+		.then(() => hashHistory.push(`/${this.props.currentUser.username}`));
 	}
 
 	render() {
