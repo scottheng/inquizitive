@@ -1,6 +1,11 @@
 class Api::CardsController < ApplicationController
 	def index 
-		@cards = Card.all
+		if params[:study_set_id]
+			study_set_id = params[:study_set_id]
+			@cards = Card.where("study_set_id = #{study_set_id}")
+		else 
+			@cards = Card.all
+		end
 
 		render 'api/cards/index'
 	end

@@ -20,6 +20,8 @@ class StudySetForm extends React.Component {
 			this.props.fetchStudySet(parseInt(nextProps.params.studySetId));
 		}
 		this.setState({studySet: nextProps.studySet});
+		debugger
+		this.setState({cards: nextProps.studySet.cards});
 
 	}
 

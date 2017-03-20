@@ -3,6 +3,8 @@ import { RECEIVE_STUDY_SET,
 import merge from 'lodash/merge';
 
 const defaultState = {
+	title: "",
+	description: "",
 	cards: []
 };
 

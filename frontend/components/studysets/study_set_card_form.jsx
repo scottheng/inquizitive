@@ -7,13 +7,16 @@ const StudySetCardForm = (props) => (
 			<input type="text" 
 					onChange={props.update('term')} 
 					placeholder="Enter term"
-					/>
+					value={props.card.term}/>
 			<br/>
 			TERM
 		</label>
 		<br/>
 		<label>
-			<input type="text" onChange={props.update('definition')} placeholder="Enter definition" />
+			<input type="text" 
+					onChange={props.update('definition')} 
+					placeholder="Enter definition"
+					value={props.card.definition} />
 			<br/>
 			DEFINITION
 		</label>

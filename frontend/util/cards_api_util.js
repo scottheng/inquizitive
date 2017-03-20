@@ -5,11 +5,11 @@ export const fetchAllCards = () => (
 	})
 );
 
-export const fetchUserCards = (userId) => (
+export const fetchUserCards = (studySetId) => (
 	$.ajax({
 		method: 'GET',
 		url:  `api/cards`,
-		data: {user_id: userId}
+		data: {study_set_id: studySetId}
 	})
 );
 

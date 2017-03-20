@@ -18,7 +18,7 @@ const mapStateToProps = (state, ownProps) => {
 	let formType = 'new';
 	let cards = newCards();
 	if (ownProps.params.studySetId) {
-		studySet = state.studySets[ownProps.params.studySetId];
+		studySet = state.studySet;
 		formType = 'edit';
 	}
 	return {

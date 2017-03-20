@@ -16,11 +16,12 @@ div.show-page-header {
 	h1 {
 		font-size: 60px;
 		font-weight: bold;
-		padding-left: 20px;
+		padding-left: 40px;
 		padding-top: 0px;
 	}
 
 	p {
+		margin-left: 40px;
 		font-size: 18px;
 	}
 }
@@ -29,7 +30,7 @@ div.study-set-subinfo {
 	display: flex;
 	justify-content: flex-start;
 	
-	margin-left: 20px;
+	margin-left: 40px;
 	margin-top: 20px;
 	font-size: 14px;
 
@@ -40,10 +41,30 @@ div.study-set-subinfo {
 	a {
 		padding-left: 20px;
 		color: $turquoise;
+		letter-spacing: 1px;
 
 		h4 {
 			margin-top: 17px;
 		}
+	}
+}
+
+div.study-set-header-nav {
+
+	ul{
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		margin-left: 40px;
+		margin-top: 20px;
+	}
+
+	li {
+		background: $turquoise;
+		font-size: 24px;
+		color: white;
+		border-radius: 100px;
+		margin-right: 5px;
 	}
 }
 

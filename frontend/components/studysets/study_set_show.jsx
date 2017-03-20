@@ -46,7 +46,15 @@ class StudySetShow extends React.Component {
 					</div>
 					<div className="study-set-header-nav">
 						<ul>
-							<li>Edit</li>
+							<li>
+								<Link to={`/`}>Edit</Link>
+							</li>
+							<li>
+								<Link to={`/`}>Add set to class or folder</Link>
+							</li>
+							<li>
+								<Link to={`/`}>Delete</Link>
+							</li>
 						</ul>
 					</div>
 				
