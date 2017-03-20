@@ -45,12 +45,12 @@ class StudySetShow extends React.Component {
 					<div className="study-set-cards-list">
 						<ul>
 							{cards}
+							<div className="add-remove-terms">
+								<Link to="editpage">
+									<button id="add-remove-terms-button">Add or Remove Terms</button>
+								</Link>
+							</div>
 						</ul>
-					</div>
-					<div className="add-remove-terms">
-						<Link to="editpage">
-							<button id="add-remove-terms-button">Add or Remove Terms</button>
-						</Link>
 					</div>
 				</div>
 			</div>

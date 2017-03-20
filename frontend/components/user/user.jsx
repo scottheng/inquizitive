@@ -10,7 +10,7 @@ class User extends React.Component {
 
 	componentDidMount() {
 		if (this.props.studySets) {
-			this.props.fetchStudySets();
+			this.props.fetchStudySets(this.props.currentUser.id);
 		}
 	}
 

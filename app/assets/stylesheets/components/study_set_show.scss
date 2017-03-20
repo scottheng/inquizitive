@@ -1,8 +1,9 @@
 div.study-set-show {
 	display: flex;
 	flex-direction: column;
-	background: $background-gray;
-	height: 100vh;
+	background: $light-gray;
+	padding-bottom: 80px;
+
 
 
 }
@@ -22,7 +23,11 @@ div.show-page-header {
 	}
 }
 
-
+div.study-set-cards {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
 
 div.study-set-cards-list {
 	ul {
@@ -32,13 +37,28 @@ div.study-set-cards-list {
 		margin-top: 20px;
 		margin-left: 20px;
 
-		li {
-			background: white;
-			margin: 20px;
-			height: 100px;
-		}
-
 	}
+}
+
+div.card-item {
+	display: flex;
+	justify-content: flex-start;
+	background: white;
+	padding: 20px;
+	margin: 5px;
+	
+
+	div.card-term {
+		display: flex;
+		width: 350px;
+		border-right: 2px solid $light-gray;
+
+		
+	}
+	h3 {
+		margin-left: 20px;
+	}
+
 }
 
 div.add-remove-terms{
@@ -46,8 +66,20 @@ div.add-remove-terms{
 	justify-content: center;
 	
 	#add-remove-terms-button {
+		font-size: 18px;
+		font-weight: bold;
+		color: white;
+		letter-spacing: 1px;
 		background: $turquoise;
 		padding: 20px;
+		padding-left: 80px;
+		padding-right: 80px;
+		margin-top: 80px;
+
+		&:hover {
+			background: $yellow;
+			color: $gray;
+		}
 	}
 
 }
