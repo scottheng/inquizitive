@@ -55,7 +55,7 @@ class StudySetForm extends React.Component {
 
 	handleSubmit(e) {
 		e.preventDefault();
-		this.props.createStudySet(this.state.studySet)
+		this.props.submitStudySet(this.state.studySet)
 		.then(newStudySetAction => this.state.cards.map(card => {
 			card["study_set_id"] = newStudySetAction.studySet.id;
 			this.props.createCard(card)

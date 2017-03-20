@@ -36,8 +36,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 	return {
 		fetchStudySets: () => dispatch(fetchStudySets()),
 		fetchStudySet: (id) => dispatch(fetchStudySet(id)),
-		createStudySet: (studySet) => dispatch(createStudySet(studySet)),
-		createCard: (card) => createCard(card)
+		submitStudySet: (studySet) => dispatch(submitStudySet(studySet)),
+		submitCard: (card) => submitCard(card)
 	};
 };
 

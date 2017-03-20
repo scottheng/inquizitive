@@ -94,7 +94,9 @@ class Header extends React.Component {
 					<h1 className="main-logo">inQuizitive</h1>
 				</Link>
 				<div className="middle-nav" >
-					<Link to={`/${this.props.currentUser.username}/study-sets/new`} >
+					<Link to={`/:username/study-sets/new`} >
+						<span className="fa fa-plus-square">
+						</span>
 						<h2>Create</h2>
 					</Link>
 				</div>

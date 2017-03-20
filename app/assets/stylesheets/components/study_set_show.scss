@@ -59,12 +59,24 @@ div.study-set-header-nav {
 		margin-top: 20px;
 	}
 
-	li {
+	button {
 		background: $turquoise;
 		font-size: 24px;
 		color: white;
-		border-radius: 100px;
-		margin-right: 5px;
+		margin-right: 10px;
+		border-radius: 50%;
+		width: 35px;
+		height: 35px;
+		display: flex;
+		justify-content: center;
+
+		&:hover {
+			background: $yellow;
+			color: $gray;
+		}
+
+
+
 	}
 }
 
