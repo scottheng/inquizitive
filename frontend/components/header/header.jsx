@@ -79,30 +79,48 @@ class Header extends React.Component {
 		const createButton = () => {
 			if (this.props.currentUser) {
 				return (
-					<Link to={`/:username/study-sets/new`} >
+					<Link to={`/:username/study-sets/new`} className="create-nav" >
 						<span className="fa fa-plus-square">
 						</span>
+						<br/>
 						<h2>Create</h2>
 					</Link>
 				);
 			}
 			else {
 				return (
-					<button id="log-in-button" 
+					<button className="create-nav"
+							id="log-in-button" 
 							onClick={this.handleClick.bind(this, true)}>
 						<span className="fa fa-plus-square">
 						</span>
+						<br/>
 						<h2>Create</h2>
 					</button>
 				);
 			}
 		};
 
+		const logoNav = () => {
+			if (this.props.currentUser) {
+				return (
+					<Link to={`/${this.props.currentUser.username}`} >
+						<h1 className="main-logo">inQuizitive</h1>
+					</Link>
+				);
+			}
+			else {
+				return (
+					<Link to="/" >
+						<h1 className="main-logo">inQuizitive</h1>
+					</Link>
+				);
+			}
+		};
+
 		return (
 			<header className="static-header">
-				<Link to="/" >
-					<h1 className="main-logo">inQuizitive</h1>
-				</Link>
+				{logoNav()}
 				<div className="middle-nav" >
 					{createButton()}
 				</div>
