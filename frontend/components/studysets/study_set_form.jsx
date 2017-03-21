@@ -64,10 +64,15 @@ class StudySetForm extends React.Component {
 		const state = this.state;
 		this.props.submitStudySet(this.state.studySet)
 		.then((newStudySetAction) => state.cards.map(card => {
-	
-			card["study_set_id"] = newStudySetAction.studySet.id;
-			this.props.submitCard(card)
-			.then((newCard) => hashHistory.push(`/study-sets/${newCard.study_set_id}`));
+			if (card.id) {
+				this.props.submitCard(card)
+				.then((newCard) => hashHistory.push(`/study-sets/${newCard.study_set_id}`));
+			}
+			else {
+				card["study_set_id"] = newStudySetAction.studySet.id;
+				this.props.createCard(card)
+				.then((newCard) => hashHistory.push(`/study-sets/${newCard.study_set_id}`));
+			}
 		}));
 	}
 

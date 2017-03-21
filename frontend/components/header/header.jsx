@@ -79,7 +79,7 @@ class Header extends React.Component {
 		const createButton = () => {
 			if (this.props.currentUser) {
 				return (
-					<Link to={`/:username/study-sets/new`} className="create-nav" >
+					<Link to={`/${this.props.currentUser.username}/study-sets/new`} className="create-nav" >
 						<span className="fa fa-plus-square">
 						</span>
 						<br/>
