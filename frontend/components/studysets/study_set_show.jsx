@@ -11,10 +11,10 @@ class StudySetShow extends React.Component {
 
 	componentDidMount() {
 		this.props.fetchStudySet(parseInt(this.props.params.studySetId));
-
 	}
 
 	componentWillReceiveProps(nextProps) {
+		window.scrollTo(0, 0);
 		if (this.props.params.studySetId !== nextProps.params.studySetId) {
 			this.props.fetchStudySet(parseInt(nextProps.params.studySetId));
 		}
