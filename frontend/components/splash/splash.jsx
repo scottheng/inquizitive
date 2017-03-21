@@ -32,7 +32,7 @@ class Splash extends React.Component {
 					<h3>Search millions of study sets or create your own. 
 						Improve your grades by studying with flashcards, games and more.</h3>
 					<button>Get started</button>
-					<img src="assets/splash-home.jpg" alt="Splash-Home"/>
+					<img src={window.splashImageUrl} alt="Splash-Home"/>
 	
 				</div>
 				<div className="study-set-preview-list">
