@@ -9,6 +9,7 @@ class StudySetForm extends React.Component {
 	}
 
 	componentDidMount() {
+		window.scrollTo(0, 0);
 		if (this.props.params.studySetId) {
 			this.props.fetchStudySet(parseInt(this.props.params.studySetId));
 
@@ -16,7 +17,7 @@ class StudySetForm extends React.Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		debugger
+		window.scrollTo(0, 0);
 		if (this.props.params.studySetId !== nextProps.params.studySetId) {
 			this.props.fetchStudySet(parseInt(nextProps.params.studySetId));
 
@@ -77,6 +78,19 @@ class StudySetForm extends React.Component {
 	}
 
 	render() {
+
+		const pageTitle = () => {
+			if (this.props.formType === 'edit') {
+				return (
+					<h1></h1>
+				);
+			}
+			else {
+				return (
+					<h1>Create a new study set</h1>
+				);
+			}
+		};
 	
 		const cardForms = this.state.cards.map((card, idx) => (
 			<StudySetCardForm card={this.state.cards[idx]} 
@@ -88,7 +102,7 @@ class StudySetForm extends React.Component {
 			<div className="study-set-form">
 				<div className="study-set-description">
 					<div className="study-set-description-header">
-						<h1>Create a new study set</h1>
+						{pageTitle()}
 						<button onClick={this.handleSubmit.bind(this)}>Create</button>
 					</div>
 						

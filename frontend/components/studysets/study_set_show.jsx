@@ -76,7 +76,7 @@ class StudySetShow extends React.Component {
 						<ul>
 							{cards}
 							<div className="add-remove-terms">
-								<Link to="editpage">
+								<Link to={`/study-sets/${this.props.params.studySetId}/edit`}>
 									<button id="add-remove-terms-button">Add or Remove Terms</button>
 								</Link>
 							</div>

@@ -90,10 +90,11 @@ div.study-set-cards-list {
 	ul {
 		display: flex;
 		flex-direction: column;
-		width: 800px;
+		width: 1000px;
 		margin-top: 20px;
 		margin-left: 20px;
-
+		font-size: 15px;
+		color: $gray;
 	}
 }
 
