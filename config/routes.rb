@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :study_sets, only: [:index, :show, :create, :update, :destroy]
     resources :cards, only: [:index, :show, :create, :update, :destroy]
+    resources :folders, only: [:index, :show, :create, :update, :destroy]
+    resources :study_set_folders, only: [:create, :destroy]
   end
   
   root "static_pages#root"

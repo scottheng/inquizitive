@@ -50,6 +50,8 @@ class User < ApplicationRecord
 	has_many :cards
 	
 	has_many :study_sets
+
+	has_many :folders
 	
 	private 
 	def ensure_session_token 

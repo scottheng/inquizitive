@@ -1,0 +1,1 @@
+json.extract! study_set, :id, :title, :description, :user_id

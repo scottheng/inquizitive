@@ -15,7 +15,5 @@ class Card < ApplicationRecord
 	validates :term, :definition, :study_set_id, presence: true 
 
 	belongs_to :study_set
-	# belongs_to :user,
-	# 	through: :study_set,
-	# 	source: :user
+
 end

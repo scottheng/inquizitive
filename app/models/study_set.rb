@@ -9,6 +9,7 @@
 #  editable_option  :string           default("only me"), not null
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
+#  description      :string
 #
 
 class StudySet < ApplicationRecord
@@ -16,4 +17,9 @@ class StudySet < ApplicationRecord
 
 	belongs_to :user
 	has_many :cards, dependent: :destroy
+	has_many :study_set_folders
+
+	has_many :folders,
+		through: :study_set_folders,
+		source: :folder
 end
