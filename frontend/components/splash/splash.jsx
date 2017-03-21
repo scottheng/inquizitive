@@ -4,29 +4,40 @@ import HeaderContainer from '../header/header_container';
 
 class Splash extends React.Component {
 
-	componentWillMount() {
-		debugger
-		if (!this.props.currentUser) {
-			hashHistory.push('/');
-		}
-	}
+	// componentWillMount() {
 
-	componentWillReceiveProps() {
-		debugger
-		this.redirectIfLoggedIn();
-	}
+	// 	if (!this.props.currentUser) {
+	// 		hashHistory.push('/');
+	// 	}
+	// }
 
-	redirectIfLoggedIn() {
-		debugger
-		if (this.props.currentUser) {
-			this.props.router.push(`/${this.props.currentUser.username}`);
-		}
-	}
+	// componentWillReceiveProps() {
+
+	// 	this.redirectIfLoggedIn();
+	// }
+
+	// redirectIfLoggedIn() {
+
+	// 	if (this.props.currentUser) {
+	// 		this.props.router.push(`/${this.props.currentUser.username}`);
+	// 	}
+	// }
 
 	render() {
 		return (
 			<div className="homepage">
-				<h1>This is the homepage.</h1>
+				<div className="welcome">
+					<h1>Simple tools for 
+						learning anything.</h1>
+					<h3>Search millions of study sets or create your own. 
+						Improve your grades by studying with flashcards, games and more.</h3>
+					<button>Get started</button>
+					<img src="assets/splash-home.jpg" alt="Splash-Home"/>
+	
+				</div>
+				<div className="study-set-preview-list">
+					<h1>Study list goes here</h1>
+				</div>
 			</div>
 		);
 	}

@@ -1,5 +1,5 @@
 import * as sessionAPIUtil from '../util/session_api_util';
-
+import { hashHistory } from 'react-router';
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
@@ -24,7 +24,7 @@ export const login = (user) => dispatch => (
 export const logout = () => dispatch => (
 	sessionAPIUtil.logout()
 		.then(user => dispatch(receiveCurrentUser(null)))
-		.fail(errors => dispatch(receiveErrors(errors.responseJSON)))
+		.then(hashHistory.push('/'))
 );
 
 export const signup = (user) => dispatch => (

@@ -29,11 +29,11 @@ const Root = ({ store }) => {
 		<Provider store={ store }>
 			<Router history={hashHistory}>
 				<Route path="/" component={ App }  >
-					<IndexRoute component={ SplashContainer}  />
+					<IndexRoute component={ SplashContainer}  onEnter={_redirectIfLoggedIn}/>
 					<Route path='/:username' component={ UserContainer } onEnter={_ensureLoggedIn}  />
-					<Route path='/study-sets/:studySetId' component={ StudySetShowContainer } />
-					<Route path='/:username/study-sets/new' component={ StudySetFormContainer } />
-					<Route path='/study-sets/:studySetId/edit' component={ StudySetFormContainer } />
+					<Route path='/study-sets/:studySetId' component={ StudySetShowContainer } onEnter={_ensureLoggedIn} />
+					<Route path='/:username/study-sets/new' component={ StudySetFormContainer } onEnter={_ensureLoggedIn} />
+					<Route path='/study-sets/:studySetId/edit' component={ StudySetFormContainer } onEnter={_ensureLoggedIn} />
 				</Route>
 			</Router>
 

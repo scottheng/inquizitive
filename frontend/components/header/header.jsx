@@ -31,8 +31,8 @@ class Header extends React.Component {
 	redirectHome(e) {
 		e.preventDefault();
 		this.setState({modalOpen: false});
-		this.props.logout()
-		.then(() => hashHistory.push('/'));
+		this.props.logout();
+		// .then(() => hashHistory.push('/'));
 		// .then(() => this.setState({modalOpen: false}))
 		// .then(() => hashHistory.push('/'));
 	}

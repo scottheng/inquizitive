@@ -26,7 +26,7 @@ class StudySetForm extends React.Component {
 		} else {
 			this.setState({cards: nextProps.cards});
 		}
-		debugger
+
 
 	}
 
@@ -59,7 +59,7 @@ class StudySetForm extends React.Component {
 	}
 
 	handleSubmit(e) {
-		debugger
+
 		e.preventDefault();
 		this.props.submitStudySet(this.state.studySet)
 		.then(newStudySetAction => this.state.cards.map(card => {
@@ -70,7 +70,7 @@ class StudySetForm extends React.Component {
 	}
 
 	render() {
-		debugger
+	
 		const cardForms = this.state.cards.map((card, idx) => (
 			<StudySetCardForm card={this.state.cards[idx]} 
 								update={this.updateCard(idx).bind(this)}
