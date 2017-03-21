@@ -7,17 +7,62 @@ class Sidebar extends React.Component {
 		if (this.props.currentUser) {
 			return(
 				<aside className="sidebar">
-					<h1>This is the sidebar.</h1>
 					<ul className="top-sidebar">
 						<li>
-							<Link to="/study-sets" >
-								Your Study Sets
-							</Link>
+							<div className="link" >
+								<Link to="/study-sets" >
+									<i className="fa fa-square"></i>
+									Your Study Sets
+								</Link>
+							</div>
 						</li>
 						<li>
-							<Link to="/settings" >
-								Settings 
-							</Link>
+							<div className="link" >
+								<Link to="/settings" >
+									<i className="fa fa-cog" ></i>
+									Settings 
+								</Link>
+							</div>
+						</li>
+					</ul>
+					<ul className="folders-sidebar">
+						<li>
+							<div className="sidebar-header" >
+								<Link to="/folders">
+									YOUR FOLDERS
+								</Link>
+							</div>
+						</li>
+						<li>
+							<div className="link" >
+								<Link to="/folders/:folderId">
+									<i className="fa fa-folder" aria-hidden="true"></i>
+									Folder Name 
+								</Link>
+							</div>
+						</li>
+						<li>
+							<div className="link" >
+								<Link to="/folders/:folderId">
+									<i className="fa fa-folder" aria-hidden="true"></i>
+									Folder Name 2
+								</Link>
+							</div>
+						</li>						<li>
+							<div className="link" >
+								<Link to="/folders/:folderId">
+									<i className="fa fa-folder" aria-hidden="true"></i>
+									Folder Name 3
+								</Link>
+							</div>
+						</li>
+						<li>
+							<div className="link" id="modal-link">
+								<Link to="/folders/new" >
+									<i className="fa fa-plus" aria-hidden="true"></i>
+									Create a folder 
+								</Link>
+							</div>
 						</li>
 					</ul>
 

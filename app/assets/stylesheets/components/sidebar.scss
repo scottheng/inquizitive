@@ -1,4 +1,54 @@
+aside.sidebar{
+	background: white;
+	display: flex;
+	flex-direction: column;
+	width: 250px;
+	font-size: 15px;
+	color: $gray;
+
+	i {
+		margin-right: 5px;
+	}
+}
+
 ul.top-sidebar {
 	display: flex;
 	flex-direction: column;
+	padding: 10px;
+	padding-top: 30px;
+	border-bottom: 1px solid $light-gray;
 }
+
+div.link {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	&:hover {
+		background: $light-gray;
+	}
+}
+
+ul.folders-sidebar {
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+	padding-top: 10px;
+
+	#modal-link {
+		color: $blue;
+	}
+}
+
+div.sidebar-header {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	font-size: 12px;
+	letter-spacing: 1px;
+
+	&:hover {
+		color: $blue;
+	}
+}
+
+
