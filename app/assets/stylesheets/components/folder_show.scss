@@ -1,0 +1,23 @@
+div.folder-show {
+	display: flex;
+	justify-content: flex-start;
+	background: $background-gray;
+
+	div.main-content-subheader {
+		display: flex;
+		justify-content: space-between;
+	}
+	
+	header {
+		background: white;
+		color: $gray;
+		
+		h1 {
+			font-size: 48px;
+		}
+
+		i {
+			margin-right: 40px;
+		}
+	}
+}

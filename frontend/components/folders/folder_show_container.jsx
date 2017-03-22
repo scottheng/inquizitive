@@ -1,5 +1,19 @@
 import { connect } from 'react-redux';
 import FolderShow from './folder_show';
-import { fetchStudySets } from '../../actions/study_set_actions';
+import { fetchFolder } from '../../actions/folder_actions';
 import lodash from 'lodash';
+
+const mapStateToProps = (state) => ({
+	currentUser: state.session.currentUser,
+	folder: state.folder
+});
+
+const mapDispatchToProps = (dispatch) => ({
+	fetchFolder: (id) => dispatch(fetchFolder(id))
+});
+
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(FolderShow);
 
