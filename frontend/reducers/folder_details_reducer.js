@@ -1,5 +1,6 @@
 import { RECEIVE_FOLDER,
-	RECEIVE_NEW_FOLDER } from '../actions/folder_actions';
+	RECEIVE_NEW_FOLDER, 
+	RECEIVE_FOLDER_ERRORS } from '../actions/folder_actions';
 import merge from 'lodash/merge';
 
 const defaultState = {
@@ -15,6 +16,9 @@ const FolderReducer = (state = defaultState, action) => {
 		case RECEIVE_NEW_FOLDER:
 		case RECEIVE_FOLDER:
 			return merge({}, action.folder);
+		case RECEIVE_FOLDER_ERRORS:
+			let errors = action.errors;
+			return merge({}, defaultState, {errors});
 		default:
 			return state;
 	}

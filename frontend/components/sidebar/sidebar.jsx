@@ -12,6 +12,10 @@ class Sidebar extends React.Component {
 		this.onModalClose = this.onModalClose.bind(this);
 	}
 
+	componentWillReceiveProps(nextProps) {
+		this.setState({modalOpen: false});
+	}
+
 	handleClick(e) {
 		e.preventDefault();
 		this.setState({modalOpen: true});

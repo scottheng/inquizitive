@@ -16,21 +16,9 @@ class FolderForm extends React.Component {
 		e.preventDefault();
 		const folder = this.state;
 		this.props.processForm(folder)
-		.then(action => hashHistory.push(`/`));
+		.then(action => hashHistory.push(`/folders/${action.folder.id}`));
 	}
 
-	renderErrors() {
-
-		return (
-			<ul className="session-errors">
-				{this.props.errors.map((error, idx) => (
-					<li key={`error-${idx}`}>
-						{error}
-					</li>
-				))}
-			</ul>
-		);
-	}
 
 	render() {
 
@@ -41,7 +29,7 @@ class FolderForm extends React.Component {
 						<h1>{this.props.formType} folder</h1>
 					</header>
 					<br/>
-					{this.renderErrors()}
+
 					<div className="folder-form-inputs">
 						<br/>
 						<div className='form-input'>
