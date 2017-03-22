@@ -91,6 +91,19 @@ class StudySetForm extends React.Component {
 				);
 			}
 		};
+
+		const submitButton = () => {
+			if (this.props.formType === 'edit') {
+				return (
+					<button onClick={this.handleSubmit.bind(this)} className="submit">Done</button>
+				);
+			}
+			else {
+				return (
+					<button onClick={this.handleSubmit.bind(this)} className="submit">Create</button>
+				);
+			}
+		};
 	
 		const cardForms = this.state.cards.map((card, idx) => (
 			<StudySetCardForm card={this.state.cards[idx]} 
@@ -103,7 +116,7 @@ class StudySetForm extends React.Component {
 				<div className="study-set-description">
 					<div className="study-set-description-header">
 						{pageTitle()}
-						<button onClick={this.handleSubmit.bind(this)}>Create</button>
+					
 					</div>
 						
 					<label>
@@ -126,8 +139,7 @@ class StudySetForm extends React.Component {
 							<h2>+  ADD CARD</h2>
 					</button>
 					<br/>
-					<button onClick={this.handleSubmit.bind(this)}
-							className="create">Create</button>
+					{submitButton()}
 				</div>
 
 			</div>
