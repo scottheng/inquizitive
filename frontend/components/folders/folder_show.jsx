@@ -36,18 +36,18 @@ class FolderShow extends React.Component {
 				<SidebarContainer />
 
 				<div className="main-content">
-					<div className="main-content-header">
+					<div className="main-content-folder-header">
 						<div className="main-content-subheader">
 							<div className="folder-description">
 								<h3>created by </h3>
 								<h3>{this.props.currentUser.username}</h3>
 							</div>
-							<header>
+							<div className="folder-title">
 								<h1>
 									<i className="fa fa-folder" aria-hidden="true"></i>
 									{this.props.folder.name}
 								</h1>
-							</header>
+							</div>
 							<h2>{this.props.folder.description}</h2>
 						</div>
 						<div className="folder-nav">

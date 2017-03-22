@@ -13,6 +13,7 @@ div.folder-show {
 	header {
 		background: white;
 		color: $gray;
+		padding: 0px;
 		
 		h1 {
 			font-size: 48px;
@@ -24,15 +25,18 @@ div.folder-show {
 	}
 }
 
-div.main-content-header {
+div.main-content-folder-header {
 	display: flex;
 	justify-content: space-between;
+	background: white;
 }
 
 div.folder-description {
 	display: flex;
 	justify-content: flex-start;
-	margin-left: 20px;
+	margin-left: 50px;
+	font-size: 15px;
+
 	h3 {
 		padding-right: 5px;
 	}
