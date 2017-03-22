@@ -4,6 +4,7 @@ export const RECEIVE_FOLDERS = 'RECEIVE_FOLDERS';
 export const RECEIVE_FOLDER = 'RECEIVE_FOLDER';
 export const RECEIVE_NEW_FOLDER = 'RECEIVE_NEW_FOLDER';
 export const RECEIVE_FOLDER_ERRORS = 'RECEIVE_FOLDER_ERRORS';
+export const REMOVE_FOLDER = 'REMOVE_FOLDER';
 
 export const receiveFolders = (folders) => ({
 	type: RECEIVE_FOLDERS,
@@ -18,6 +19,11 @@ export const receiveFolder = (folder) => ({
 export const receiveNewFolder = (newFolder) => ({
 	type: RECEIVE_NEW_FOLDER,
 	newFolder
+});
+
+export const removeFolder = (folder) => ({
+	type: REMOVE_FOLDER,
+	folder
 });
 
 export const receiveFolderErrors = (errors) => ({
@@ -39,4 +45,9 @@ export const createFolder = (folder) => dispatch => (
 	FoldersAPIUtil.createFolder(folder)
 		.then(newFolder => dispatch(receiveFolder(newFolder)))
 		.fail(errors => dispatch(receiveFolderErrors(errors)))
+);
+
+export const deleteFolder = (id) => dispatch => (
+	FoldersAPIUtil.deleteFolder(id)
+		.then(deletedFolder => dispatch(removeFolder(deletedFolder)))
 );

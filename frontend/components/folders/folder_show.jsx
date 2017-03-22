@@ -5,6 +5,7 @@ import SidebarContainer from '../sidebar/sidebar_container';
 class FolderShow extends React.Component {
 	constructor(props) {
 		super(props);
+		this.deleteFolder = this.deleteFolder.bind(this);
 	}
 
 	componentDidMount() {
@@ -17,6 +18,12 @@ class FolderShow extends React.Component {
 		if (this.props.params.folderId !== nextProps.params.folderId) {
 			this.props.fetchFolder(parseInt(nextProps.params.folderId));
 		}
+	}
+
+	deleteFolder(e) {
+		e.preventDefault();
+		this.props.deleteFolder(this.props.params.folderId)
+		.then(hashHistory.push(`${this.props.currentUser.username}/folders`));
 	}
 
 	render() {
@@ -67,7 +74,7 @@ class FolderShow extends React.Component {
 									</button>
 								</abbr>
 								<abbr title="Delete">
-									<button >
+									<button onClick={this.deleteFolder}>
 										<Link to={`/`}>
 											<span className="fa fa-trash"></span>
 										</Link>
