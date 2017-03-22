@@ -43,23 +43,30 @@ class User extends React.Component {
 				<SidebarContainer />
 
 				<div className="main-content">
-					<header>
-						{username()}
-					</header>
-					<nav className="user-nav">
-						<ul className="user-nav-links">
-							<li>
-								<Link to="fixthis" >
-									Created
-								</Link>
-							</li>
-							<li>
-								<Link to="folders" >
-									Folders
-								</Link>
-							</li>
-						</ul>
-					</nav>
+					<div className="main-content-header">
+						<div className="main-content-header-profile-pic">
+							<h3>Picture could go here</h3>
+						</div>
+						<div className="main-content-subheader">
+							<header>
+								{username()}
+							</header>
+							<nav className="user-nav">
+								<ul className="user-nav-links">
+									<li>
+										<Link to="fixthis" >
+											Created
+										</Link>
+									</li>
+									<li>
+										<Link to="folders" >
+											Folders
+										</Link>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
 					<div className="term-count">
 						<h2>You have created {this.props.studySetsCount} sets</h2>
 					</div>

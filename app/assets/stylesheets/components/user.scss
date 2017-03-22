@@ -15,22 +15,39 @@ div.user-homepage {
 		
 		
 		header {
-			background: $dark-gray;
+			background: white;
+			color: $gray;
 		}
 	}
 }
 
+div.main-content-header {
+	display: flex;
+	background: white;
+	height: 150px;
+}
+
 nav.user-nav {
-	background: $nav-gray;
 	
 	ul {
 		display: flex;
-		font-size: 18px;
-		margin-left: 150px;
-
+		font-size: 15px;
+		margin-left: 45px;
+		color: $turquoise;
+		border: 3px solid $light-gray;
+		width: 140px;
 		li {
 			padding: 10px;
+
+			&:first-child {
+				border-right: 3px solid $light-gray;
+			}
+
+			&:hover {
+				color: $yellow;
+			}
 		}
+
 	}
 }
 
