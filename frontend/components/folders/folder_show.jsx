@@ -38,20 +38,41 @@ class FolderShow extends React.Component {
 				<div className="main-content">
 					<div className="main-content-header">
 						<div className="main-content-subheader">
+							<div className="folder-description">
+								<h3>created by </h3>
+								<h3>{this.props.currentUser.username}</h3>
+							</div>
 							<header>
 								<h1>
 									<i className="fa fa-folder" aria-hidden="true"></i>
 									{this.props.folder.name}
 								</h1>
 							</header>
+							<h2>{this.props.folder.description}</h2>
 						</div>
 						<div className="folder-nav">
 							<ul className="folder-nav-links">
-								<li>
-									<Link to="edit">
-										Edit
-									</Link>
-								</li>
+								<abbr title="Edit">
+									<button>
+										<Link to={`/study-sets/${this.props.params.studySetId}/edit`}>
+											<span className="fa fa-pencil"></span>
+										</Link>
+									</button>
+								</abbr>
+								<abbr title="Add study set to folder">
+									<button>
+										<Link to={`/`}>
+											<i className="fa fa-plus" aria-hidden="true"></i>
+										</Link>
+									</button>
+								</abbr>
+								<abbr title="Delete">
+									<button >
+										<Link to={`/`}>
+											<span className="fa fa-trash"></span>
+										</Link>
+									</button>
+								</abbr>
 							</ul>
 						</div>
 					</div>

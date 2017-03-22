@@ -5,7 +5,9 @@ div.folder-show {
 
 	div.main-content-subheader {
 		display: flex;
-		justify-content: space-between;
+		flex-direction: column;
+		
+		
 	}
 	
 	header {
@@ -18,6 +20,49 @@ div.folder-show {
 
 		i {
 			margin-right: 40px;
+		}
+	}
+}
+
+div.main-content-header {
+	display: flex;
+	justify-content: space-between;
+}
+
+div.folder-description {
+	display: flex;
+	justify-content: flex-start;
+	margin-left: 20px;
+	h3 {
+		padding-right: 5px;
+	}
+}
+
+div.folder-nav {
+
+	ul {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		margin-right: 40px;
+		margin-top: 40px;
+	}
+
+	button {
+		display: flex;
+		justify-content: center;
+		align-content: center;
+		background: $turquoise;
+		font-size: 24px;
+		color: white;
+		margin-right: 10px;
+		border-radius: 50%;
+		width: 40px;
+		height: 40px;
+
+		a {
+			display: flex;
+			align-content: center;
 		}
 	}
 }

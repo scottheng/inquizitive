@@ -1,4 +1,4 @@
-import { RECEIVE_FOLDERS, RECEIVE_NEW_FOLDER } from '../actions/folder_actions';
+import { RECEIVE_FOLDERS, RECEIVE_FOLDER, RECEIVE_NEW_FOLDER } from '../actions/folder_actions';
 import merge from 'lodash/merge';
 
 const FoldersReducer = (state = {}, action) => {
@@ -7,6 +7,8 @@ const FoldersReducer = (state = {}, action) => {
 	switch(action.type) {
 		case RECEIVE_FOLDERS:
 			return merge({}, action.folders);
+		case RECEIVE_FOLDER:
+			return merge({}, state, {[action.folder.id]: action.folder});
 		case RECEIVE_NEW_FOLDER:
 			newState = merge({}, state);
 			newState[action.folder.id] = action.folder;
