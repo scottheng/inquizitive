@@ -14,11 +14,12 @@ class Sidebar extends React.Component {
 
 	componentDidMount() {
 		if (this.props.folders) {
-			this.props.fetchFolders();
+			this.props.fetchFolders(this.props.currentUser.id);
 		}
 	}
 
 	componentWillReceiveProps(nextProps) {
+
 		this.setState({modalOpen: false});
 		this.setState({folders: nextProps.folders});
 	}
@@ -30,12 +31,10 @@ class Sidebar extends React.Component {
 
 	onModalClose() {
 		this.setState({modalOpen: false});
-		// this.props.clearErrors();
 	}
 
 	renderUserFolders() {
-	
-		return this.state.folders.map((folder,idx) => (
+		return this.props.folders.map((folder,idx) => (
 			<li key={`folder-${idx}`}>
 				<div className="link" >
 					<Link to={`folders/${folder.id}`}>

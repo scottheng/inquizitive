@@ -55,7 +55,7 @@ class FolderIndex extends React.Component {
 							<nav className="user-nav">
 								<ul className="user-nav-links">
 									<li>
-										<Link to="fixthis" >
+										<Link to={`/${this.props.currentUser.username}`} >
 											Created
 										</Link>
 									</li>

@@ -19,9 +19,20 @@
 	margin-left: 20px;
 }
 
+.folder-input {
+	border-bottom: 3px solid $gray;
+	font-size: 20px;
+	width: 91%;
+	margin-left: 20px;
+}
+
 .form-input {
 	margin-top: 20px;
 	margin-bottom: 20px;
+}
+
+.input-label {
+	margin-left: 20px;
 }
 
 input[type="submit"] {
