@@ -9,9 +9,7 @@ class FolderIndex extends React.Component {
 	}
 
 	componentDidMount() {
-		if (this.props.folders) {
-			this.props.fetchFolders();
-		}
+		this.props.fetchFolders(this.props.currentUser.id);
 	}
 
 	componentWillReceiveProps(nextProps) {
@@ -19,7 +17,7 @@ class FolderIndex extends React.Component {
 	}
 
 	render() {
-		const allFolders = this.state.folders.map((folder, idx) => (
+		const allFolders = this.props.folders.map((folder, idx) => (
 			<li key={`folder-${idx}`}>
 				<Link to={`folders/${folder.id}`} className="folders-list-item">
 					<h3>Number of terms(get number of cards for this study set)</h3>

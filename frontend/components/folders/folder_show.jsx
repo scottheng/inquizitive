@@ -1,11 +1,17 @@
 import React from 'react';
 import { hashHistory, Link } from 'react-router';
 import SidebarContainer from '../sidebar/sidebar_container';
+import FolderFormContainer from '../folders/folder_form_container';
+import Modal from 'react-modal';
+import ModalStyle from '../modal/modal_style';
 
 class FolderShow extends React.Component {
 	constructor(props) {
 		super(props);
+		this.state = {modalOpen: false};
 		this.deleteFolder = this.deleteFolder.bind(this);
+		this.handleClick = this.handleClick.bind(this);
+		this.onModalClose = this.onModalClose.bind(this);
 	}
 
 	componentDidMount() {
@@ -13,11 +19,20 @@ class FolderShow extends React.Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-
 		window.scrollTo(0, 0);
 		if (this.props.params.folderId !== nextProps.params.folderId) {
 			this.props.fetchFolder(parseInt(nextProps.params.folderId));
 		}
+		this.setState({modalOpen: false});
+	}
+
+	handleClick(e) {
+		e.preventDefault();
+		this.setState({modalOpen: true});
+	}
+
+	onModalClose() {
+		this.setState({modalOpen: false});
 	}
 
 	deleteFolder(e) {
@@ -60,10 +75,8 @@ class FolderShow extends React.Component {
 						<div className="folder-nav">
 							<ul className="folder-nav-links">
 								<abbr title="Edit">
-									<button>
-										<Link to={`/study-sets/${this.props.params.studySetId}/edit`}>
-											<span className="fa fa-pencil"></span>
-										</Link>
+									<button onClick={this.handleClick}>
+										<span className="fa fa-pencil"></span>
 									</button>
 								</abbr>
 								<abbr title="Add study set to folder">
@@ -89,6 +102,16 @@ class FolderShow extends React.Component {
 						</ul>
 					</div>
 				</div>
+					<Modal
+						isOpen={this.state.modalOpen}
+						onRequestClose={this.onModalClose}
+						style={ModalStyle}
+						contentLabel="session-modal">
+						<button onClick={this.onModalClose} id="close-modal-button">
+							X
+						</button>
+						<FolderFormContainer formType='edit' />
+					</Modal>
 			</div>
 		);
 	}

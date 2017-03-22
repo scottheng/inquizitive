@@ -47,6 +47,12 @@ export const createFolder = (folder) => dispatch => (
 		.fail(errors => dispatch(receiveFolderErrors(errors)))
 );
 
+export const updateFolder = (folder) => dispatch => (
+	FoldersAPIUtil.updateFolder(folder)
+		.then(updatedFolder => dispatch(receiveFolder(updatedFolder)))
+		.fail(errors => dispatch(receiveFolderErrors(errors)))
+);
+
 export const deleteFolder = (id) => dispatch => (
 	FoldersAPIUtil.deleteFolder(id)
 		.then(deletedFolder => dispatch(removeFolder(deletedFolder)))

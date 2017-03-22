@@ -9,9 +9,9 @@ class FolderForm extends React.Component {
 	}
 
 	componentDidMount() {
-		if (this.props.folder) {
-			this.props.fetchFolder(this.props.folder.id);
-		}
+		// if (this.props.folder) {
+		// 	this.props.fetchFolder(this.props.folder.id);
+		// }
 	}
 
 	componentWillReceiveProps(nextProps) {
@@ -24,6 +24,7 @@ class FolderForm extends React.Component {
 
 	handleSubmit(e) {
 		e.preventDefault();
+		debugger
 		const folder = this.state;
 		this.props.processForm(folder)
 		.then(action => hashHistory.push(`/folders/${action.folder.id}`));
