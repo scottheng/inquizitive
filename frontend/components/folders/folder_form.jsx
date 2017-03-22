@@ -4,8 +4,18 @@ import { Link, hashHistory } from 'react-router';
 class FolderForm extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = { name: "", description: "", user_id: this.props.currentUser.id };
+		this.state = this.props.folder;
 		this.handleSubmit = this.handleSubmit.bind(this);
+	}
+
+	componentDidMount() {
+		if (this.props.folder) {
+			this.props.fetchFolder(this.props.folder.id);
+		}
+	}
+
+	componentWillReceiveProps(nextProps) {
+		this.setState(nextProps.folder);
 	}
 
 	update(field) {
