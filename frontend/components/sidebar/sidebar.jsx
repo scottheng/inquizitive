@@ -1,7 +1,26 @@
 import React from 'react';
 import { hashHistory, Link } from 'react-router';
+import FolderFormContainer from '../folders/folder_form_container';
+import Modal from 'react-modal';
+import ModalStyle from '../modal/modal_style';
 
 class Sidebar extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {modalOpen: false};
+		this.handleClick = this.handleClick.bind(this);
+		this.onModalClose = this.onModalClose.bind(this);
+	}
+
+	handleClick(e) {
+		e.preventDefault();
+		this.setState({modalOpen: true});
+	}
+
+	onModalClose() {
+		this.setState({modalOpen: false});
+		// this.props.clearErrors();
+	}
 
 	renderSidebar() {
 		if (this.props.currentUser) {
@@ -58,13 +77,24 @@ class Sidebar extends React.Component {
 						</li>
 						<li>
 							<div className="link" id="modal-link">
-								<Link to="/folders/new" >
-									<i className="fa fa-plus" aria-hidden="true"></i>
-									Create a folder 
-								</Link>
+								<button id="new-folder-button"
+										onClick={this.handleClick}>
+									Create a folder
+								</button>
 							</div>
 						</li>
 					</ul>
+
+					<Modal
+						isOpen={this.state.modalOpen}
+						onRequestClose={this.onModalClose}
+						style={ModalStyle}
+						contentLabel="session-modal">
+						<button onClick={this.onModalClose} id="close-modal-button">
+							X
+						</button>
+						<FolderFormContainer formType='new' />
+					</Modal>
 
 					
 				</aside>

@@ -3,6 +3,7 @@ import FolderForm from './folder_form';
 import { createFolder, updateFolder } from '../../actions/folder_actions';
 
 const mapStateToProps = (state, ownProps) => ({
+	currentUser: state.session.currentUser,
 	formType: ownProps.formType,
 	errors: state.folder.errors
 });

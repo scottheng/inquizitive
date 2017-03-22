@@ -5,7 +5,8 @@ import merge from 'lodash/merge';
 const defaultState = {
 	name: "",
 	description: "",
-	study_sets: []
+	study_sets: [],
+	errors: []
 };
 
 const FolderReducer = (state = defaultState, action) => {

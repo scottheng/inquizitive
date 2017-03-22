@@ -4,7 +4,7 @@ import { Link, hashHistory } from 'react-router';
 class FolderForm extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = { name: "", description: "" };
+		this.state = { name: "", description: "", user_id: this.props.currentUser.id };
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
@@ -20,10 +20,11 @@ class FolderForm extends React.Component {
 	}
 
 	renderErrors() {
+
 		return (
 			<ul className="session-errors">
 				{this.props.errors.map((error, idx) => (
-					<li key={`erro-${idx}`}>
+					<li key={`error-${idx}`}>
 						{error}
 					</li>
 				))}
