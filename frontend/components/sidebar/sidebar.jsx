@@ -10,7 +10,7 @@ class Sidebar extends React.Component {
 					<ul className="top-sidebar">
 						<li>
 							<div className="link" >
-								<Link to="/study-sets" >
+								<Link to={`/${this.props.currentUser.username}`} >
 									<i className="fa fa-square"></i>
 									Your Study Sets
 								</Link>
