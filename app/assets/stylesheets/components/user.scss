@@ -67,7 +67,7 @@ div.study-sets-list {
 	display: flex;
 	justify-content: flex-start;
 	width: 800px;
-	border-right: 1px solid $gray;
+	padding-left: 50px;
 
 	h2 {
 		color: $blue;
@@ -78,10 +78,25 @@ div.study-sets-list {
 }
 
 a.study-sets-list-item {
+	background: white;
 	display: flex;
+	flex-direction: column;
+	width: 700px;
+	margin-top: 20px;
+
+	&:last-child {
+		margin-bottom: 20px;
+	}
+
+	h2 {
+		font-size: 28px;
+		font-weight: bolder;
+		letter-spacing: 1px;
+		color: $gray;
+	}
 
 	&:hover {
-		background: $nav-gray;
+		border-bottom: 5px solid $yellow;
 	}
 	
 }

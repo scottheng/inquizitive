@@ -24,8 +24,8 @@ class User extends React.Component {
 		const allStudySets = this.state.studySets.map((studySet, idx) => (
 			<li key={`study-set-${idx}`}>
 				<Link to={`/study-sets/${studySet.id}`} className="study-sets-list-item">
-					<h2>{studySet.title}</h2>
 					<h3>Number of terms(get number of cards for this study set)</h3>
+					<h2>{studySet.title}</h2>
 				</Link>
 			</li>
 		));
@@ -67,9 +67,7 @@ class User extends React.Component {
 							</nav>
 						</div>
 					</div>
-					<div className="term-count">
-						<h2>You have created {this.props.studySetsCount} sets</h2>
-					</div>
+
 					<div className="study-sets-list">
 						<ul>
 							{allStudySets}
