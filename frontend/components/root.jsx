@@ -7,7 +7,7 @@ import UserContainer from './user/user_container';
 import HeaderContainer from './header/header';
 import StudySetShowContainer from './studysets/study_set_show_container';
 import StudySetFormContainer from './studysets/study_set_form_container';
-
+import FoldersIndexContainer from './folders/folder_index_container';
 
 const Root = ({ store }) => {
 
@@ -34,6 +34,7 @@ const Root = ({ store }) => {
 					<Route path='/study-sets/:studySetId' component={ StudySetShowContainer } onEnter={_ensureLoggedIn} />
 					<Route path='/:username/study-sets/new' component={ StudySetFormContainer } onEnter={_ensureLoggedIn} />
 					<Route path='/study-sets/:studySetId/edit' component={ StudySetFormContainer } onEnter={_ensureLoggedIn} />
+					<Route path='/:username/folders' component={ FoldersIndexContainer } onEnter={_ensureLoggedIn} />
 				</Route>
 			</Router>
 

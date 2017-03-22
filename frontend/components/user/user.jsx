@@ -15,8 +15,8 @@ class User extends React.Component {
 		}
 	}
 
-	componentWillReceiveProps(newProps) {
-		this.setState({studySets: newProps.studySets});
+	componentWillReceiveProps(nextProps) {
+		this.setState({studySets: nextProps.studySets});
 	}
 
 	render() {
@@ -59,7 +59,7 @@ class User extends React.Component {
 										</Link>
 									</li>
 									<li>
-										<Link to="folders" >
+										<Link to={`/${this.props.currentUser.username}/folders`} >
 											Folders
 										</Link>
 									</li>
