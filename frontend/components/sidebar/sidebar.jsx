@@ -71,7 +71,7 @@ class Sidebar extends React.Component {
 					<ul className="folders-sidebar">
 						<li>
 							<div className="sidebar-header" >
-								<Link to="/folders">
+								<Link to={`/${this.props.currentUser.username}/folders`}>
 									YOUR FOLDERS
 								</Link>
 							</div>

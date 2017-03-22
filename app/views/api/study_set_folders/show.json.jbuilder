@@ -1,0 +1,1 @@
+json.extract! @study_set_folder, :id, :study_set_id, :folder_id

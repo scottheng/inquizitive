@@ -12,9 +12,10 @@ class Api::StudySetFoldersController < ApplicationController
 	end
 	
 	def destroy 
-		@study_set_folder = StudySetFolder.find_by_id(params[:id])
+		@study_set_folder = StudySetFolder.find_by(study_set_id: params[:study_set_folder][:study_set_id],
+													folder_id: params[:study_set_folder][:folder_id])
 		@study_set_folder.destroy 
-		render 'api/study_set_folders/show'
+		render 'api/study_set_folders/show.json.jbuilder'
 	end
 	
 	private 

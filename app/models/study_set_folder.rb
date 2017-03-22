@@ -11,6 +11,7 @@
 
 class StudySetFolder < ApplicationRecord
 	validates :study_set_id, :folder_id, presence: true
+	validates :study_set_id, uniqueness: { scope: :folder_id}
 
 	belongs_to :study_set 
 
