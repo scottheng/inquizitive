@@ -7,13 +7,20 @@ import ModalStyle from '../modal/modal_style';
 class Sidebar extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {modalOpen: false};
+		this.state = {modalOpen: false, folders: this.props.folders};
 		this.handleClick = this.handleClick.bind(this);
 		this.onModalClose = this.onModalClose.bind(this);
 	}
 
+	componentDidMount() {
+		if (this.props.folders) {
+			this.props.fetchFolders();
+		}
+	}
+
 	componentWillReceiveProps(nextProps) {
 		this.setState({modalOpen: false});
+		this.setState({folders: nextProps.folders});
 	}
 
 	handleClick(e) {
@@ -24,6 +31,20 @@ class Sidebar extends React.Component {
 	onModalClose() {
 		this.setState({modalOpen: false});
 		// this.props.clearErrors();
+	}
+
+	renderUserFolders() {
+	
+		return this.state.folders.map((folder,idx) => (
+			<li key={`folder-${idx}`}>
+				<div className="link" >
+					<Link to={`folders/${folder.id}`}>
+						<i className="fa fa-folder" aria-hidden="true"></i>
+						{folder.name}
+					</Link>
+				</div>
+			</li>
+		));
 	}
 
 	renderSidebar() {
@@ -56,29 +77,7 @@ class Sidebar extends React.Component {
 								</Link>
 							</div>
 						</li>
-						<li>
-							<div className="link" >
-								<Link to="/folders/:folderId">
-									<i className="fa fa-folder" aria-hidden="true"></i>
-									Folder Name 
-								</Link>
-							</div>
-						</li>
-						<li>
-							<div className="link" >
-								<Link to="/folders/:folderId">
-									<i className="fa fa-folder" aria-hidden="true"></i>
-									Folder Name 2
-								</Link>
-							</div>
-						</li>						<li>
-							<div className="link" >
-								<Link to="/folders/:folderId">
-									<i className="fa fa-folder" aria-hidden="true"></i>
-									Folder Name 3
-								</Link>
-							</div>
-						</li>
+						{this.renderUserFolders()}
 						<li>
 							<div className="link" id="modal-link">
 								<button id="new-folder-button"
