@@ -38,8 +38,8 @@ const Root = ({ store }) => {
 					<Route path='/study-sets/:studySetId/edit' component={ StudySetFormContainer } onEnter={_ensureLoggedIn} />
 					<Route path='/:username/folders' component={ FoldersIndexContainer } onEnter={_ensureLoggedIn} />
 					<Route path='/folders/:folderId' component={ FolderShowContainer } onEnter={_ensureLoggedIn} />
-					{/*<Route path='/folders/:folderId/add-study-sets' component={ StudySetFolderFormContainer} onEnter={_ensureLoggedIn} />
-					<Route path='/study-sets/:studySetId/add-folders' component={ StudySetFolderFormContainer} onEnter={_ensureLoggedIn} />*/}
+					<Route path='/folders/:folderId/add-study-sets' component={ StudySetFolderFormContainer} onEnter={_ensureLoggedIn} />
+					<Route path='/study-sets/:studySetId/add-folders' component={ StudySetFolderFormContainer} onEnter={_ensureLoggedIn} />
 				</Route>
 			</Router>
 
