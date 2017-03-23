@@ -61,14 +61,14 @@ class StudySetShow extends React.Component {
 							</abbr>
 							<abbr title="Add study set to folder">
 								<button>
-									<Link to={`/`}>
+									<Link to={`/study-sets/${this.props.params.studySetId}/add-folders`}>
 										<i className="fa fa-plus" aria-hidden="true"></i>
 									</Link>
 								</button>
 							</abbr>
 							<abbr title="Delete">
 								<button onClick={this.deleteStudySet.bind(this)}>
-									<Link to={`/`}>
+									<Link>
 										<span className="fa fa-trash"></span>
 									</Link>
 								</button>

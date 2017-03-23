@@ -45,6 +45,19 @@ class StudySetFolderItem extends React.Component {
 	}
 
 	render() {
+		const title = () => {
+			if (this.props.params.folderId) {
+				return (
+					<h1>{this.props.item.title}</h1>
+				);
+			}
+			else {
+				return (
+					<h1>{this.props.item.name}</h1>
+				);
+			}
+		};
+
 		const addButton = () => {
 			if (this.state.addable === true) {
 				return (
@@ -65,7 +78,7 @@ class StudySetFolderItem extends React.Component {
 		};
 		return (
 			<div>
-				<h1>{this.props.item.title}</h1>
+				{title()}
 				{addButton()}
 			</div>
 		);
