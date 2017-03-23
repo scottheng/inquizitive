@@ -7,7 +7,6 @@ import { fetchStudySets, fetchStudySet, createStudySet } from './actions/study_s
 import configureStore from './store/store';
 import Root from './components/root';
 import Modal from 'react-modal';
-import SortableComponent from './components/draggable/draggable';
 
 document.addEventListener('DOMContentLoaded', () => {
     Modal.setAppElement(document.getElementById('root'));
@@ -18,18 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         store = configureStore();
     }
-    window.signup = sessionAPIUtil.signup;
-    window.login = sessionAPIUtil.login;
-    window.logout = sessionAPIUtil.logout;
-    window.fetchStudySets = fetchStudySets;
-    window.fetchStudySet = fetchStudySet;
-    window.createStudySet = createStudySet;
-    window.fetchAllCards = cardsAPIUtil.fetchAllCards;
-    window.createCard = cardsAPIUtil.createCard;
-    window.updateCard = cardsAPIUtil.updateCard;
-    window.fetchCard = cardsAPIUtil.fetchCard;
-    window.deleteCard = cardsAPIUtil.deleteCard;
-    window.store = store;
+
     const root = document.getElementById('root');
     ReactDOM.render(<Root store={store} />, root);
 });
