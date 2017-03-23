@@ -59,6 +59,7 @@ class FolderShow extends React.Component {
 				<button className="remove-study-set-button"
 						onClick={this.removeStudySet.bind(this, studySet.id)}>
 					<span className="fa fa-trash"></span>
+
 				</button>
 			</li>
 		));
@@ -89,9 +90,9 @@ class FolderShow extends React.Component {
 										<span className="fa fa-pencil"></span>
 									</button>
 								</abbr>
-								<abbr title="Add study set to folder">
+								<abbr title="Add study sets to folder">
 									<button>
-										<Link to={`/`}>
+										<Link to={`/folders/${this.props.params.folderId}/add-study-sets`}>
 											<i className="fa fa-plus" aria-hidden="true"></i>
 										</Link>
 									</button>

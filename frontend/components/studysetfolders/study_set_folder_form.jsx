@@ -9,6 +9,12 @@ class StudySetFolderForm extends React.Component {
 
 	componentDidMount() {
 		this.props.fetchItems(this.props.currentUser.id);
+		if (this.props.params.folderId) {
+			this.props.fetchReceiver(this.props.params.folderId);
+		}
+		else {
+			this.props.fetchReceiver(this.props.params.studySetId);
+		}
 	}
 
 	componentWillReceiveProps(nextProps) {
@@ -19,10 +25,12 @@ class StudySetFolderForm extends React.Component {
 		if (this.props.params.folderId) {
 			return this.props.studySetFolderItems.map((item, idx) => (
 				<li>
-					<StudySetFolderItem item={item} 
+					<StudySetFolderItem item={item}
+										fetchReceiver={this.props.fetchReceiver} 
 										createStudySetFolder={this.props.createStudySetFolder} 
 										removeStudySetFolder={this.props.removeStudySetFolder}
-										params={this.props.params} />
+										params={this.props.params}
+										receiver={this.props.receiver} />
 			
 					
 				</li>

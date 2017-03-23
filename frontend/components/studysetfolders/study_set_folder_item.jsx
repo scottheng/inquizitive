@@ -3,7 +3,33 @@ import React from 'react';
 class StudySetFolderItem extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {addable: true};
+		this.state = this.initialState();
+	}
+
+	componentWillReceiveProps(nextProps) {
+		this.refreshState(nextProps.receiver, nextProps.item);
+	}
+
+	initialState() {
+		let ids;
+		if (this.props.params.folderId) {
+			ids = this.props.receiver.study_sets.map(studySet => studySet.id);
+		}
+		else {
+			ids = this.props.receiver.folders.map(folder => folder.id);
+		}
+		return {addable: !ids.includes(this.props.item.id)};
+	}
+
+	refreshState(receiver, item) {
+		let ids;
+		if (this.props.params.folderId) {
+			ids = receiver.study_sets.map(studySet => studySet.id);
+		}
+		else {
+			ids = receiver.folders.map(folder => folder.id);
+		}
+		this.setState({addable: !ids.includes(item.id)});
 	}
 
 	addToFolder(e) {
@@ -12,11 +38,22 @@ class StudySetFolderItem extends React.Component {
 		this.props.createStudySetFolder({folder_id: this.props.params.folderId, study_set_id: this.props.item.id});
 	}
 
+	deleteFromFolder(e) {
+		e.preventDefault();
+		this.setState({addable: true});
+		this.props.removeStudySetFolder({folder_id: this.props.params.folderId, study_set_id: this.props.item.id});
+	}
+
 	render() {
 		const addButton = () => {
 			if (this.state.addable === true) {
 				return (
 					<button onClick={this.addToFolder.bind(this)}>Add To Folder</button>
+				);
+			}
+			else {
+				return (
+					<button onClick={this.deleteFromFolder.bind(this)}>Delete From Folder</button>
 				);
 			}
 		};

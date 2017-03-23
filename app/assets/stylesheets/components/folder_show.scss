@@ -86,4 +86,9 @@ button.remove-study-set-button {
 	margin-top: 50px;
 	height: 30px;
 	margin-left: 10px;
+	color: $nav-gray;
+
+	&:hover {
+		color: black;
+	}
 }
