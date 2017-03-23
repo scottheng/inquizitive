@@ -82,13 +82,13 @@ ul.study-sets-in-folder {
 }
 
 button.remove-study-set-button {
-	font-size: 28px;
+	font-size: 15px;
 	margin-top: 50px;
 	height: 30px;
 	margin-left: 10px;
-	color: $nav-gray;
+	color: red;
 
 	&:hover {
-		color: black;
+		color: red;
 	}
 }

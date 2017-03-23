@@ -5,7 +5,8 @@ import merge from 'lodash/merge';
 const defaultState = {
 	title: "",
 	description: "",
-	cards: []
+	cards: [],
+	folders: []
 };
 
 const StudySetReducer = (state = defaultState, action) => {

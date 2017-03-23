@@ -6,7 +6,6 @@ import { fetchStudySets, fetchStudySet } from '../../actions/study_set_actions';
 import lodash from 'lodash';
 
 const mapStateToProps = (state, ownProps) => {
-
 	const studySetFolderItems = ownProps.params.folderId ? state.studySets : state.folders;
 	const receiver = ownProps.params.folderId ? state.folder : state.studySet;
 

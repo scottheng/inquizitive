@@ -1,0 +1,88 @@
+div.study-set-folders-list {
+	display: flex;
+	justify-content: center;
+
+	ul.study-set-folders-items-list {
+		display: flex;
+		flex-direction: column;
+		color: $gray;
+		width: 700px;
+		background: $light-gray;
+
+		div {
+			display: flex;
+			justify-content: space-between;
+			margin-top: 20px;
+			background: white;
+
+			button {
+				margin-right: 20px;
+				font-size: 36px;
+			}
+		}
+
+		li {
+			background: $light-gray;
+
+			&:last-child {
+				margin-bottom: 20px;
+			}
+		}
+	}
+}
+
+div.study-set-folder-header {
+	background: white;
+	display: flex;
+	justify-content: space-between;
+
+
+
+	div {
+		display: flex;
+		flex-direction: row;
+
+	}
+
+	h1 {
+		margin-left: 30px;
+		font-size: 36px;
+
+		&:last-child {
+			margin-left: -30px;
+			color: $turquoise;
+		}
+	}
+}
+
+button.add-button {
+	color: $turquoise;
+
+	&:hover {
+		color: $yellow;
+	}
+}
+
+button.delete-button {
+	color: red;
+
+	&:hover {
+		color: $gray;
+	}
+}
+
+button.redirect-back {
+	background: $turquoise;
+	margin-right: 40px;
+	align-self: center;
+	height: 50px;
+	padding-left: 40px;
+	padding-right: 40px;
+	font-size: 36px;
+	color: white;
+
+	&:hover {
+		background: $yellow;
+		color: $gray;
+	}
+}

@@ -58,7 +58,7 @@ class FolderShow extends React.Component {
 				</Link>
 				<button className="remove-study-set-button"
 						onClick={this.removeStudySet.bind(this, studySet.id)}>
-					<span className="fa fa-trash"></span>
+					Remove
 
 				</button>
 			</li>

@@ -1,5 +1,6 @@
 import React from 'react';
 import StudySetFolderItem from './study_set_folder_item';
+import { Link } from 'react-router';
 
 class StudySetFolderForm extends React.Component {
 	constructor(props) {
@@ -8,6 +9,7 @@ class StudySetFolderForm extends React.Component {
 	}
 
 	componentDidMount() {
+	
 		this.props.fetchItems(this.props.currentUser.id);
 		if (this.props.params.folderId) {
 			this.props.fetchReceiver(this.props.params.folderId);
@@ -22,37 +24,70 @@ class StudySetFolderForm extends React.Component {
 	}
 
 	allItems() {
-		if (this.props.params.folderId) {
-			return this.props.studySetFolderItems.map((item, idx) => (
-				<li>
-					<StudySetFolderItem item={item}
-										fetchReceiver={this.props.fetchReceiver} 
-										createStudySetFolder={this.props.createStudySetFolder} 
-										removeStudySetFolder={this.props.removeStudySetFolder}
-										params={this.props.params}
-										receiver={this.props.receiver} />
-			
-					
-				</li>
-			));
-		}
-		else {
-			return this.props.studySetFolderItems.map((item, idx) => (
-				<li>
-					<h1>{item.name}</h1>
-				</li>
-			));
-		}
+			return (
+				this.props.studySetFolderItems.map((item, idx) => (
+					<li>
+						<StudySetFolderItem item={item}
+											fetchReceiver={this.props.fetchReceiver} 
+											createStudySetFolder={this.props.createStudySetFolder} 
+											removeStudySetFolder={this.props.removeStudySetFolder}
+											params={this.props.params}
+											receiver={this.props.receiver} />
+					</li>
+				))
+			);
 	}
 
 	render() {
 
+		const allItems = this.props.studySetFolderItems.map((item,idx) => (
+			<li key={`study-set-folder-item-${idx}`}>
+				<StudySetFolderItem item={item}
+									fetchReceiver={this.props.fetchReceiver} 
+									createStudySetFolder={this.props.createStudySetFolder} 
+									removeStudySetFolder={this.props.removeStudySetFolder}
+									params={this.props.params}
+									receiver={this.props.receiver} />
+			</li>
+		));
+
+		const headerTitle = () => {
+			if (this.props.params.folderId) {
+				return (
+					<div>
+						<h1>Add Study Sets to </h1>
+						<h1>{this.props.receiver.name}</h1>
+					</div>
+				);
+			}
+			else {
+				return (
+					<div>
+						<h1>Add {this.props.receiver.title} </h1>
+						<h1>to Folders </h1>
+					</div>
+				);
+			}
+		};
+
 		return (
 			<div className="study-set-folders-page">
-				<div className="items-list">
-					<ul>
-						{this.allItems()}
-					</ul>
+				<div className="main-content">
+					<div className="study-set-folder-header">
+						{headerTitle()}
+						<button className="redirect-back">
+							<Link to={`/folders/${this.props.receiver.id}`}
+									className="redirect-back">
+								Done
+							</Link>
+						</button>
+					</div>
+					<div className="study-set-folders-list">
+						<ul className="study-set-folders-items-list">
+							{this.allItems()}
+
+						</ul>
+					</div>
 				</div>
 			</div>
 		);

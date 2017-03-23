@@ -48,12 +48,18 @@ class StudySetFolderItem extends React.Component {
 		const addButton = () => {
 			if (this.state.addable === true) {
 				return (
-					<button onClick={this.addToFolder.bind(this)}>Add To Folder</button>
+					<button onClick={this.addToFolder.bind(this)}
+							className="add-button">
+						<i className="fa fa-plus-circle" aria-hidden="true"></i>
+					</button>
 				);
 			}
 			else {
 				return (
-					<button onClick={this.deleteFromFolder.bind(this)}>Delete From Folder</button>
+					<button onClick={this.deleteFromFolder.bind(this)}
+							className="delete-button">
+						<i className="fa fa-minus-circle" aria-hidden="true"></i>
+					</button>
 				);
 			}
 		};
