@@ -10,6 +10,7 @@ div.study-set-form {
 div.study-set-description {
 	display: flex;
 	flex-direction: column;
+	margin-left: 40px;
 	input {
 		padding-bottom: 5px;
 		border-bottom: 3px solid $gray;
@@ -31,6 +32,7 @@ div.study-set-description-header {
 		font-size: 28px;
 		
 	}
+	
 
 	button {
 		background: $turquoise;

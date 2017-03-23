@@ -60,10 +60,9 @@ class Sidebar extends React.Component {
 							</div>
 						</li>
 						<li>
-							<div className="link" >
-								<Link to="/settings" >
-									<i className="fa fa-cog" ></i>
-									Settings 
+							<div className="link">
+								<Link to={`/${this.props.currentUser.username}/study-sets/new`} >
+									Create a study set
 								</Link>
 							</div>
 						</li>
