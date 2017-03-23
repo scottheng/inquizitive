@@ -9,7 +9,6 @@
 User.destroy_all
 demo_user = User.create({username: "demoUser", email: "demo@example.com", password: "demopassword"})
 
-
 StudySet.destroy_all
 study_set1 = StudySet.create({title: "Alphabet" , user_id: demo_user.id})
 study_set2 = StudySet.create({title: "Basketball" , user_id: demo_user.id})
@@ -18,6 +17,18 @@ study_set4 = StudySet.create({title: "Sports", user_id: demo_user.id})
 study_set5 = StudySet.create({title: "Games", user_id: demo_user.id})
 study_set6 = StudySet.create({title: "React/Redux", user_id: demo_user.id})
 study_set7 = StudySet.create({title: "Rails", user_id: demo_user.id})
+
+Folder.destroy_all
+folder1 = Folder.create({name: "Programming Flashcards", description: "Flashcards relating to programming", user_id: demo_user.id})
+folder2 = Folder.create({name: "Sports Flashcards", description: "Flashcards relating to sports", user_id: demo_user.id})
+
+StudySetFolder.destroy_all
+study_set_folder1 = StudySetFolder.create({folder_id: folder1.id, study_set_id: study_set3.id})
+study_set_folder2 = StudySetFolder.create({folder_id: folder1.id, study_set_id: study_set6.id})
+study_set_folder3 = StudySetFolder.create({folder_id: folder1.id, study_set_id: study_set7.id})
+study_set_folder4 = StudySetFolder.create({folder_id: folder2.id, study_set_id: study_set2.id})
+study_set_folder5 = StudySetFolder.create({folder_id: folder2.id, study_set_id: study_set4.id})
+
 
 Card.destroy_all
 Card.create({term: "A", definition: "apple", study_set_id: study_set1.id})
