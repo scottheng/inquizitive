@@ -32,17 +32,30 @@ class StudySetFolderItem extends React.Component {
 		this.setState({addable: !ids.includes(item.id)});
 	}
 
-	addToFolder(e) {
+	handleAdd(e) {
 		e.preventDefault();
 		this.setState({addable: false});
-		this.props.createStudySetFolder({folder_id: this.props.params.folderId, study_set_id: this.props.item.id});
+
+		if (this.props.params.folderId) {
+			this.props.createStudySetFolder({folder_id: this.props.params.folderId, study_set_id: this.props.item.id});
+		}
+		else {
+			this.props.createStudySetFolder({folder_id: this.props.item.id, study_set_id: this.props.params.studySetId});
+		}
 	}
 
-	deleteFromFolder(e) {
+	handleRemove(e) {
 		e.preventDefault();
 		this.setState({addable: true});
-		this.props.removeStudySetFolder({folder_id: this.props.params.folderId, study_set_id: this.props.item.id});
+
+		if (this.props.params.folderId) {
+			this.props.removeStudySetFolder({folder_id: this.props.params.folderId, study_set_id: this.props.item.id});
+		}
+		else {
+			this.props.removeStudySetFolder({folder_id: this.props.item.id, study_set_id: this.props.params.studySetId});
+		}
 	}
+
 
 	render() {
 		const title = () => {
@@ -61,7 +74,7 @@ class StudySetFolderItem extends React.Component {
 		const addButton = () => {
 			if (this.state.addable === true) {
 				return (
-					<button onClick={this.addToFolder.bind(this)}
+					<button onClick={this.handleAdd.bind(this)}
 							className="add-button">
 						<i className="fa fa-plus-circle" aria-hidden="true"></i>
 					</button>
@@ -69,7 +82,7 @@ class StudySetFolderItem extends React.Component {
 			}
 			else {
 				return (
-					<button onClick={this.deleteFromFolder.bind(this)}
+					<button onClick={this.handleRemove.bind(this)}
 							className="delete-button">
 						<i className="fa fa-minus-circle" aria-hidden="true"></i>
 					</button>

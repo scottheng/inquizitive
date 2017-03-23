@@ -100,7 +100,7 @@ class StudySetFolderForm extends React.Component {
 					</div>
 					<div className="study-set-folders-list">
 						<ul className="study-set-folders-items-list">
-							{this.allItems()}
+							{allItems}
 
 						</ul>
 					</div>

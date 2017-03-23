@@ -32,7 +32,7 @@ class StudySetShow extends React.Component {
 		const {studySet} = this.props;
 
 		const cards = studySet.cards.map((card, idx) => (
-			<StudySetCard card={card} />
+			<StudySetCard card={card} key={idx}/>
 		));
 
 		return (
