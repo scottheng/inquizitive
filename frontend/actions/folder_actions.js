@@ -1,5 +1,5 @@
 import * as FoldersAPIUtil from '../util/folders_api_util';
-
+import * as StudySetFoldersAPIUtil from '../util/study_set_folders_api_util';
 export const RECEIVE_FOLDERS = 'RECEIVE_FOLDERS';
 export const RECEIVE_FOLDER = 'RECEIVE_FOLDER';
 export const RECEIVE_NEW_FOLDER = 'RECEIVE_NEW_FOLDER';
@@ -56,4 +56,9 @@ export const updateFolder = (folder) => dispatch => (
 export const deleteFolder = (id) => dispatch => (
 	FoldersAPIUtil.deleteFolder(id)
 		.then(deletedFolder => dispatch(removeFolder(deletedFolder)))
+);
+
+export const deleteStudySetFolder = (studySetFolder) => dispatch => (
+	StudySetFoldersAPIUtil.removeStudySetFolder(studySetFolder)
+		.then(deletedStudySetFolder => dispatch(fetchFolder(deletedStudySetFolder.folder_id)))
 );

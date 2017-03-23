@@ -1,4 +1,5 @@
 import React from 'react';
+import StudySetFolderItem from './study_set_folder_item';
 
 class StudySetFolderForm extends React.Component {
 	constructor(props) {
@@ -18,7 +19,12 @@ class StudySetFolderForm extends React.Component {
 		if (this.props.params.folderId) {
 			return this.props.studySetFolderItems.map((item, idx) => (
 				<li>
-					<h1>{item.title}</h1>
+					<StudySetFolderItem item={item} 
+										createStudySetFolder={this.props.createStudySetFolder} 
+										removeStudySetFolder={this.props.removeStudySetFolder}
+										params={this.props.params} />
+			
+					
 				</li>
 			));
 		}

@@ -41,6 +41,12 @@ class FolderShow extends React.Component {
 		.then(hashHistory.push(`${this.props.currentUser.username}/folders`));
 	}
 
+	removeStudySet(studySetId, e) {
+		e.preventDefault();
+		this.props.deleteStudySetFolder({folder_id: this.props.params.folderId,
+									study_set_id: studySetId});
+	}
+
 	render() {
 		const {folder} = this.props;
 	
@@ -50,6 +56,10 @@ class FolderShow extends React.Component {
 					<h3>Number of terms(get number of cards for this study set)</h3>
 					<h2>{studySet.title}</h2>
 				</Link>
+				<button className="remove-study-set-button"
+						onClick={this.removeStudySet.bind(this, studySet.id)}>
+					<span className="fa fa-trash"></span>
+				</button>
 			</li>
 		));
 
@@ -97,7 +107,7 @@ class FolderShow extends React.Component {
 						</div>
 					</div>
 					<div className="study-sets-list">
-						<ul>
+						<ul className="study-sets-in-folder">
 							{studySets}
 						</ul>
 					</div>

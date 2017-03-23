@@ -50,6 +50,7 @@ div.folder-nav {
 		justify-content: flex-start;
 		margin-right: 40px;
 		margin-top: 40px;
+
 	}
 
 	button {
@@ -69,4 +70,20 @@ div.folder-nav {
 			align-content: center;
 		}
 	}
+}
+
+ul.study-sets-in-folder {
+	padding-bottom: 20px;
+	li {
+
+		display: flex;
+		justify-content: flex-end;
+	}
+}
+
+button.remove-study-set-button {
+	font-size: 28px;
+	margin-top: 50px;
+	height: 30px;
+	margin-left: 10px;
 }

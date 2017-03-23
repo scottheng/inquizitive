@@ -11,7 +11,9 @@ const mapStateToProps = (state, ownProps) => {
 
 	return {
 		currentUser: state.session.currentUser,
-		studySetFolderItems: lodash.values(studySetFolderItems)
+		studySetFolderItems: lodash.values(studySetFolderItems),
+		createStudySetFolder: (studySetFolder) => StudySetFoldersAPIUtil.createStudySetFolder(studySetFolder),
+		removeStudySetFolder: (studySetFolder) => StudySetFoldersAPIUtil.removeStudySetFolder(studySetFolder)
 	};
 };
 
