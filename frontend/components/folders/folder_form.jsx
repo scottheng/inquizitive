@@ -24,7 +24,6 @@ class FolderForm extends React.Component {
 
 	handleSubmit(e) {
 		e.preventDefault();
-		debugger
 		const folder = this.state;
 		this.props.processForm(folder)
 		.then(action => hashHistory.push(`/folders/${action.folder.id}`));
