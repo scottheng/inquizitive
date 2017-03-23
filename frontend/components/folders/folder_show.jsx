@@ -59,7 +59,6 @@ class FolderShow extends React.Component {
 				<button className="remove-study-set-button"
 						onClick={this.removeStudySet.bind(this, studySet.id)}>
 					Remove
-
 				</button>
 			</li>
 		));
@@ -76,7 +75,7 @@ class FolderShow extends React.Component {
 								<h3>{this.props.currentUser.username}</h3>
 							</div>
 							<div className="folder-title">
-								<h1>
+								<h1 className="folder-title">
 									<i className="fa fa-folder" aria-hidden="true"></i>
 									{this.props.folder.name}
 								</h1>

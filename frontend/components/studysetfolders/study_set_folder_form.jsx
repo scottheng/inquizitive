@@ -70,16 +70,32 @@ class StudySetFolderForm extends React.Component {
 			}
 		};
 
+		const doneButton = () => {
+			if (this.props.params.folderId) {
+				return (
+					<Link to={`/folders/${this.props.receiver.id}`}
+							className="redirect-back">
+						Done
+					</Link>
+				);
+			}
+			else {
+				return (
+					<Link to={`/study-sets/${this.props.receiver.id}`}
+							className="redirect-back">
+						Done
+					</Link>
+				);
+			}
+		};
+
 		return (
 			<div className="study-set-folders-page">
 				<div className="main-content">
 					<div className="study-set-folder-header">
 						{headerTitle()}
 						<button className="redirect-back">
-							<Link to={`/folders/${this.props.receiver.id}`}
-									className="redirect-back">
-								Done
-							</Link>
+							{doneButton()}
 						</button>
 					</div>
 					<div className="study-set-folders-list">
