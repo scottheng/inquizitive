@@ -8,7 +8,7 @@ class Flashcards extends React.Component {
 	render() {
 		return (
 			<div className="flashcards-page">
-				<div className="flip-container" ontouchstart="this.classList.toggle('hover');">
+				<div className="flip-container" >
 					<div className="flipper">
 						<div className="front">
 							<h1>Hello</h1>

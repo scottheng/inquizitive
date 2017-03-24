@@ -9,6 +9,7 @@ import Root from './components/root';
 import Modal from 'react-modal';
 
 document.addEventListener('DOMContentLoaded', () => {
+    
     Modal.setAppElement(document.getElementById('root'));
     let store;
     if (window.currentUser) {
@@ -20,4 +21,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const root = document.getElementById('root');
     ReactDOM.render(<Root store={store} />, root);
+
 });

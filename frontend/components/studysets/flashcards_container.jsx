@@ -2,7 +2,8 @@ import { connect } from 'react-redux';
 import Flashcards from './flashcards';
 
 const mapStateToProps = state => ({
-	currentUser: state.session.currentUser
+	currentUser: state.session.currentUser,
+	
 });
 
 const mapDispatchToProps = dispatch => ({
