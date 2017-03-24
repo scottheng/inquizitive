@@ -43,28 +43,28 @@ class User extends React.Component {
 				<SidebarContainer />
 
 				<div className="main-content">
-					<div className="main-content-header">
-						<div className="main-content-header-profile-pic">
-							<h3>Picture could go here</h3>
-						</div>
-						<div className="main-content-subheader">
-							<header>
-								{username()}
-							</header>
-							<nav className="user-nav">
-								<ul className="user-nav-links">
-									<li>
-										<Link to={`/${this.props.currentUser.username}`} >
-											Created
-										</Link>
-									</li>
-									<li>
-										<Link to={`/${this.props.currentUser.username}/folders`} >
-											Folders
-										</Link>
-									</li>
-								</ul>
-							</nav>
+					<div className="main-content-info">
+						<span className="fa fa-user" aria-hidden="true"></span>
+						<div className="main-content-header">
+							<div className="main-content-subheader">
+								<header>
+									{username()}
+								</header>
+								<nav className="user-nav">
+									<ul className="user-nav-links">
+										<li>
+											<Link to={`/${this.props.currentUser.username}`} >
+												Created
+											</Link>
+										</li>
+										<li>
+											<Link to={`/${this.props.currentUser.username}/folders`} >
+												Folders
+											</Link>
+										</li>
+									</ul>
+								</nav>
+							</div>
 						</div>
 					</div>
 

@@ -43,7 +43,10 @@ class StudySetShow extends React.Component {
 						<h3>{studySet.cards.length} terms</h3>
 						<br/>
 						<Link to={`/${this.props.currentUser.username}`}>
-							<h4>{this.props.currentUser.username}</h4>
+							<h4>
+								<span className="fa fa-user" aria-hidden="true"></span>
+								{this.props.currentUser.username}
+							</h4>
 						</Link>
 					</div>
 					<div className="study-set-info">

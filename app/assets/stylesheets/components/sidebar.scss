@@ -21,6 +21,10 @@ ul.top-sidebar {
 	width: 250px;
 	padding-top: 30px;
 	border-bottom: 1px solid $light-gray;
+
+	#new-study-set {
+		color: $turquoise;
+	}
 }
 
 div.link {
@@ -41,7 +45,6 @@ ul.folders-sidebar {
 
 	#modal-link {
 		color: $turquoise;
-		font-weight: bold;
 		letter-spacing: 1px;
 	}
 }

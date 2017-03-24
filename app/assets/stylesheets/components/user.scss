@@ -21,10 +21,26 @@ div.user-homepage {
 	}
 }
 
+div.main-content-info {
+	display: flex;
+	flex-direction: row;
+	background: white;
+
+	span {
+		align-self: center;
+		font-size: 80px;
+		margin-left: 50px;
+		color: $blue;
+	}
+}
+
+
+
 div.main-content-header {
 	display: flex;
 	background: white;
 	height: 150px;
+
 }
 
 nav.user-nav {

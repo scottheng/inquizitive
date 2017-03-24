@@ -60,9 +60,10 @@ class Sidebar extends React.Component {
 							</div>
 						</li>
 						<li>
-							<div className="link">
+							<div className="link" id="new-study-set">
 								<Link to={`/${this.props.currentUser.username}/study-sets/new`} >
-									Create a study set
+									<i className="fa fa-plus" aria-hidden="true"></i>
+									Create a new study set
 								</Link>
 							</div>
 						</li>
@@ -80,6 +81,7 @@ class Sidebar extends React.Component {
 							<div className="link" id="modal-link">
 								<button id="new-folder-button"
 										onClick={this.handleClick}>
+									<i className="fa fa-plus" aria-hidden="true"></i>
 									Create a folder
 								</button>
 							</div>
