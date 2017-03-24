@@ -1,24 +1,27 @@
-# README
+# inQuizitive
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Check out the live [website][heroku] !
 
-Things you may want to cover:
+[heroku]: https://inquizitive-app.herokuapp.com
 
-* Ruby version
+Inspired by my favorite flashcards app, inQuizitive is a full-stack web application clone of Quizlet. 
 
-* System dependencies
+Built using:
+- Ruby on Rails
+- PostgreSQL
+- React.js
+- Redux
+- jQuery
 
-* Configuration
+## Features and Implementation
 
-* Database creation
+When users log into the website, they are presented with a dashboard that displays all their study sets. From the dashboard, the user is able to navigate through the website. The user has the ability to view their study sets, view their folders, create a folder, and create a study set.
 
-* Database initialization
+### Create a study set with flashcards
 
-* How to run the test suite
+Users are able to create a study set with flashcards in one form and are able 
 
-* Services (job queues, cache servers, search engines, etc.)
+### Add study sets to folders
 
-* Deployment instructions
 
-* ...
+## Future Direction

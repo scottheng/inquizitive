@@ -57,6 +57,7 @@ class StudySetForm extends React.Component {
 		const cards = this.state.cards;
 		cards.push({term: "", definition: ""});
 		this.setState({cards});
+		window.scrollTo(0,document.body.scrollHeight);
 	}
 
 	handleSubmit(e) {
