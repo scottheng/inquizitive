@@ -51,11 +51,33 @@ class SessionForm extends React.Component {
 
 	render() {
 
+		const formTitle = () => {
+			if (this.props.formType === 'signup') {
+				return (
+					<h1>Sign up</h1>
+				);
+			}
+			else {
+				return (
+					<h1>Log in</h1>
+				);
+			}
+		};
+
+		const submitName = () => {
+			if (this.props.formType === 'signup') {
+				return "Sign up";
+			}
+			else {
+				return "Log in";
+			}			
+		};
+
 		return (
 			<div className="session-form-container">
 				<form onSubmit={this.handleSubmit} className="session-form-box">
 					<header className='form-title'>
-						<h1>{this.props.formType}</h1>
+						{formTitle()}
 					</header>
 					<br/>
 					{this.renderErrors()}
@@ -84,7 +106,7 @@ class SessionForm extends React.Component {
 							</label>
 						</div>
 						<br/>
-						<input type="submit" value={this.props.formType} />
+						<input type="submit" value={submitName()} />
 					</div>
 				</form>
 			</div>

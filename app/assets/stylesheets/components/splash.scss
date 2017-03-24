@@ -1,20 +1,14 @@
 div.welcome {
 	color: $gray;
-
-
-	img {
-		object-fit: cover;
-	}
 	h1 {
 		position: absolute;
-		left: 180px;
+		left: 130px;
 		top: 250px;
 		font-size: 48px;
-		width: 400px;
+		width: 450px;
 		text-align: right;
-		font-weight: 200;
-		color: $gray;
-		font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+		font-weight: 900;
+		color: $blue;
 		letter-spacing: 2px;
 	}
 	h3 {

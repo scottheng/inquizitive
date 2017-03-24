@@ -17,14 +17,22 @@
 		margin-top: 13px;
 
 		button {
-			margin-top: 2px;
-			background: $turquoise;
+			align-self: center;
 			padding-left: 20px;
 			padding-right: 20px;
 
+			&:last-child {
+				background: $turquoise;
+				padding-top: 10px;
+				padding-bottom: 10px;
+
+				&:hover {
+					background: $yellow;
+				}
+			}
+
 			&:hover {
-				background: $yellow;
-				color: $gray;
+				color: $light-gray;
 			}
 		}
 
