@@ -105,6 +105,9 @@ class Flashcards extends React.Component {
 						{prevButton()}
 					</li>
 					<li>
+						<h2>{this.state.cardIndex+1} out of {this.state.cards.length}</h2>
+					</li>
+					<li>
 						{nextButton()}
 					</li>
 				</ul>
