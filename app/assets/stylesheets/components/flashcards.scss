@@ -1,5 +1,5 @@
 .flashcards-page {
-	background: $background-gray;
+	background: $light-gray;
 	height: 100vh;
 	display: flex;
 	justify-content: center;
@@ -17,7 +17,7 @@
 
 .flip-container, .front, .back {
 	width: 800px;
-	height: 400px;
+	height: 450px;
 	position: absolute;
 	top: 100px;
 }
@@ -37,6 +37,15 @@
 	position: absolute;
 	top: 0;
 	left: 0;
+	display: flex;
+	justify-content: center;
+	color: $gray;
+
+	h1 {
+		font-size: 36px;
+		align-self: center;
+		
+	}
 }
 
 /* front pane, placed above back */
@@ -49,4 +58,26 @@
 /* back, initially hidden pane */
 .back {
 	transform: rotateY(180deg);
+}
+
+ul.prev-next-buttons {
+	align-self: flex-end;
+	margin-bottom: 100px;
+	display: flex;
+	justify-content: space-between;
+	font-size: 48px;
+	width: 200px;
+	color: $turquoise;
+
+}
+
+div.inactive {
+	opacity: .4;
+}
+
+button.active {
+
+	&:hover {
+		color: $yellow;
+	}
 }
