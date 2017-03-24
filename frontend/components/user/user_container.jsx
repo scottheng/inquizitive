@@ -6,7 +6,8 @@ import lodash from 'lodash';
 const mapStateToProps = state => ({
 	currentUser: state.session.currentUser,
 	studySets: lodash.values(state.studySets),
-	studySetsCount: lodash.values(state.studySets).length
+	studySetsCount: lodash.values(state.studySets).length,
+	foldersCount: lodash.values(state.folders).length
 });
 
 const mapDispatchToProps = dispatch => ({

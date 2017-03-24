@@ -7,7 +7,7 @@
 }
 .form-title {
 	padding-left: 0px;
-	
+
 	h1 {
 		padding-bottom: 20px;
 		padding-top: 20px;
@@ -19,6 +19,10 @@
 	font-size: 20px;
 	width: 91%;
 	margin-left: 20px;
+
+	&:focus {
+		border-bottom: 3px solid $yellow;
+	}
 }
 
 .folder-input {

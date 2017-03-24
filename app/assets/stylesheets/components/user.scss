@@ -51,7 +51,7 @@ nav.user-nav {
 		margin-left: 45px;
 		color: $turquoise;
 		border: 3px solid $light-gray;
-		width: 140px;
+		width: 180px;
 		li {
 			padding: 10px;
 
@@ -106,19 +106,21 @@ a.study-sets-list-item {
 
 	h2 {
 		font-size: 28px;
-		font-weight: bolder;
+		font-weight: 900;
 		letter-spacing: 1px;
 		color: $gray;
 		margin-left: 10px;
-	}
-
-	h3 {
-		margin-left: 30px;
-
+		padding-top: 0;
 	}
 
 	&:hover {
 		border-bottom: 5px solid $yellow;
+	}
+
+	div.study-set-subinfo {
+		margin: 0;
+		margin-left: 30px;
+		height: 55px;
 	}
 	
 }

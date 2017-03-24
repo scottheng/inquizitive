@@ -24,7 +24,16 @@ class User extends React.Component {
 		const allStudySets = this.state.studySets.map((studySet, idx) => (
 			<li key={`study-set-${idx}`}>
 				<Link to={`/study-sets/${studySet.id}`} className="study-sets-list-item">
-					<h3>Number of terms(get number of cards for this study set)</h3>
+					<div className="study-set-subinfo">
+						<h3>{studySet.card_count} terms</h3>
+						<br/>
+						<Link to={`/${this.props.currentUser.username}`}>
+							<h4>
+								<span className="fa fa-user" aria-hidden="true"></span>
+								{this.props.currentUser.username}
+							</h4>
+						</Link>
+					</div>
 					<h2>{studySet.title}</h2>
 				</Link>
 			</li>
@@ -54,12 +63,12 @@ class User extends React.Component {
 									<ul className="user-nav-links">
 										<li>
 											<Link to={`/${this.props.currentUser.username}`} >
-												Created
+												Created ({this.props.studySetsCount})
 											</Link>
 										</li>
 										<li>
 											<Link to={`/${this.props.currentUser.username}/folders`} >
-												Folders
+												Folders ({this.props.foldersCount})
 											</Link>
 										</li>
 									</ul>

@@ -9,6 +9,7 @@ class FolderIndex extends React.Component {
 	}
 
 	componentDidMount() {
+		this.props.fetchStudySets(this.props.currentUser.id);
 		this.props.fetchFolders(this.props.currentUser.id);
 	}
 
@@ -20,7 +21,7 @@ class FolderIndex extends React.Component {
 		const allFolders = this.props.folders.map((folder, idx) => (
 			<li key={`folder-${idx}`}>
 				<Link to={`folders/${folder.id}`} className="folders-list-item">
-					<h3>Number of terms(get number of cards for this study set)</h3>
+					<h3>{folder.study_set_count} sets</h3>
 					<h2>
 						<i className="fa fa-folder" aria-hidden="true"></i>
 						{folder.name}
@@ -53,12 +54,12 @@ class FolderIndex extends React.Component {
 									<ul className="user-nav-links">
 										<li>
 											<Link to={`/${this.props.currentUser.username}`} >
-												Created
+												Created ({this.props.studySetsCount})
 											</Link>
 										</li>
 										<li>
 											<Link to={`/${this.props.currentUser.username}/folders`} >
-												Folders
+												Folders ({this.props.foldersCount})
 											</Link>
 										</li>
 									</ul>

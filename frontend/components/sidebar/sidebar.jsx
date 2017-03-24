@@ -94,7 +94,7 @@ class Sidebar extends React.Component {
 						style={ModalStyle}
 						contentLabel="session-modal">
 						<button onClick={this.onModalClose} id="close-modal-button">
-							X
+							<i className="fa fa-times-circle" aria-hidden="true"></i>
 						</button>
 						<FolderFormContainer formType='new' />
 					</Modal>

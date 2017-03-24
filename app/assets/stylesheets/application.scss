@@ -18,20 +18,21 @@
 
 @import "base/reset.scss";
 
-@import "base/colors.scss";
-@import "base/fonts.scss";
-@import "base/layout.scss";
-@import "base/grid.scss";
+@import "base/colors";
+@import "base/fonts";
+@import "base/layout";
+@import "base/grid";
 
-@import "components/header.scss";
-@import "components/splash.scss";
-@import "components/modal.scss";
-@import "components/session_form.scss";
+@import "components/header";
+@import "components/splash";
+@import "components/modal";
+@import "components/session_form";
 @import "components/user";
 @import "components/sidebar";
-@import "components/study_set_show.scss";
+@import "components/study_set_show";
 @import "components/study_set_form";
 @import "components/folder_index";
 @import "components/folder_show";
+@import "components/folder_form";
 @import "components/study_set_folder_form";
 @import "components/flashcards";

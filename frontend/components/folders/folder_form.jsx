@@ -32,11 +32,33 @@ class FolderForm extends React.Component {
 
 	render() {
 
+		const formTitle = () => {
+			if (this.props.formType === 'new') {
+				return (
+					<h1>Create a new folder</h1>
+				);
+			}
+			else {
+				return (
+					<h1>Edit folder</h1>
+				);
+			}
+		};
+
+		const submitLabel = () => {
+			if (this.props.formType === 'new') {
+				return "Create";
+			}
+			else {
+				return "Save";
+			}
+		};
+
 		return (
 			<div className="folder-form">
 				<form onSubmit={this.handleSubmit} className="folder-form-box">
 					<header className='form-title'>
-						<h1>{this.props.formType} folder</h1>
+						{formTitle()}
 					</header>
 					<br/>
 
@@ -63,7 +85,7 @@ class FolderForm extends React.Component {
 							</label>
 						</div>
 						<br />
-						<input type="submit" value={this.props.formType} />
+						<input type="submit" value={submitLabel()} />
 					</div>
 				</form>
 			</div>

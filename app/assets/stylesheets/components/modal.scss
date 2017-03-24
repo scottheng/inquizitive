@@ -6,4 +6,8 @@
 	z-index: 13;
 	margin-top: 17px;
 
+	&:hover {
+		color: $dark-gray;
+	}
+
 }

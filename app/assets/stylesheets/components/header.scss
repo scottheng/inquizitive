@@ -28,6 +28,7 @@
 
 				&:hover {
 					background: $yellow;
+					color: $gray;
 				}
 			}
 
@@ -40,14 +41,10 @@
 			margin-left: auto;
 
 			&:hover {
-				color: $light-gray;
+				color: $gray;
 			}
 		}
 
-	}
-
-	#close-modal-button {
-		color: pink;
 	}
 
 
