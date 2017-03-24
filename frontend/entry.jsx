@@ -9,7 +9,12 @@ import Root from './components/root';
 import Modal from 'react-modal';
 
 document.addEventListener('DOMContentLoaded', () => {
-    
+
+    setInterval(function() {
+        $.get("http://inquizitive-app.herokuapp.com");
+    }, 1740000);    
+
+
     Modal.setAppElement(document.getElementById('root'));
     let store;
     if (window.currentUser) {
