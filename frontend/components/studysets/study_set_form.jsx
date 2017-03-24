@@ -83,7 +83,7 @@ class StudySetForm extends React.Component {
 		const pageTitle = () => {
 			if (this.props.formType === 'edit') {
 				return (
-					<h1></h1>
+					<h1>Edit {this.props.studySet.title}</h1>
 				);
 			}
 			else {
