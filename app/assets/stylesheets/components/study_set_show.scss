@@ -10,14 +10,15 @@ div.study-set-show {
 
 div.show-page-header {
 	background: white;
-	height: 250px;
+	height: 200px;
 	color: $gray;
+	display: flex;
+	justify-content: space-between;
 
 	h1 {
 		font-size: 60px;
 		font-weight: bold;
-		padding-left: 40px;
-		padding-top: 0px;
+		padding: 0;
 	}
 
 	p {
@@ -26,17 +27,23 @@ div.show-page-header {
 	}
 }
 
+div.study-set-information {
+	display: flex;
+	flex-direction: column;
+	margin-left: 60px;
+	align-content: space-between;
+}
+
 div.study-set-subinfo {
 	display: flex;
 	justify-content: flex-start;
 	
-	margin-left: 40px;
-	margin-top: 20px;
 	font-size: 14px;
 
 	h3 {
 		padding-right: 20px;
 		border-right: 2px solid $light-gray;
+		align-self: center;
 
 	}
 	a {
@@ -45,8 +52,6 @@ div.study-set-subinfo {
 		letter-spacing: 1px;
 
 		h4 {
-			margin-top: 17px;
-
 			span {
 				margin-right: 10px;
 				color: $blue;
@@ -60,9 +65,9 @@ div.study-set-header-nav {
 	ul{
 		display: flex;
 		flex-direction: row;
-		justify-content: flex-start;
-		margin-left: 40px;
+		justify-content: space-between;
 		margin-top: 20px;
+		width: 180px;
 	}
 
 	button {
@@ -91,6 +96,46 @@ div.study-set-header-nav {
 	}
 }
 
+.flashcards-link {
+	align-self: center;
+}
+
+button.button-to-flashcards {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 125px;
+	height: 125px;
+	align-self: center;
+	margin-right: 100px;
+    -webkit-box-shadow: 0 0 5px 3px $light-gray;
+    -moz-box-shadow: 0 0 5px 3px $light-gray;
+    box-shadow: 0 0 5px 3px $light-gray;
+	color: turquoise;
+	border-bottom: 5px solid $turquoise;
+	
+	div.flashcard-icon {
+		align-self: center;
+		font-size: 60px;
+		margin-left: 20px;
+	}
+
+	h2 {
+		align-self: center;
+		margin-left: 20px;
+		font-size: 15px;
+		margin-bottom: 10px;
+	}
+
+	&:hover {
+		border-bottom: 5px solid $yellow;
+
+		h2 {
+			color:$yellow;
+		}
+	}
+}
+
 div.study-set-cards {
 	display: flex;
 	flex-direction: column;
@@ -115,6 +160,7 @@ div.card-item {
 	background: white;
 	padding: 20px;
 	margin: 5px;
+	margin-left: 40px;
 	
 
 	div.card-term {
@@ -126,8 +172,14 @@ div.card-item {
 	}
 	h3 {
 		margin-left: 20px;
+		align-self: center;
 	}
 
+}
+
+div.card-definition {
+	display: flex;
+	width: 580px;
 }
 
 div.add-remove-terms{

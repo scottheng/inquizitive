@@ -121,6 +121,10 @@ a.study-sets-list-item {
 		margin: 0;
 		margin-left: 30px;
 		height: 55px;
+
+		h4:hover {
+			color: $yellow;
+		}
 	}
 	
 }

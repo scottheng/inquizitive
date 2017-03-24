@@ -39,46 +39,56 @@ class StudySetShow extends React.Component {
 			<div className="study-set-show">
 
 				<div className="show-page-header">
-					<div className="study-set-subinfo">
-						<h3>{studySet.cards.length} terms</h3>
-						<br/>
-						<Link to={`/${this.props.currentUser.username}`}>
-							<h4>
-								<span className="fa fa-user" aria-hidden="true"></span>
-								{this.props.currentUser.username}
-							</h4>
-						</Link>
+					<div className="study-set-information">
+						<div className="study-set-subinfo">
+							<h3>{studySet.cards.length} terms</h3>
+							<br/>
+							<Link to={`/${this.props.currentUser.username}`}>
+								<h4>
+									<span className="fa fa-user" aria-hidden="true"></span>
+									{this.props.currentUser.username}
+								</h4>
+							</Link>
+						</div>
+						<div className="study-set-info">
+							<h1>{studySet.title}</h1>
+							<p>{studySet.description}</p>
+						</div>
+						<div className="study-set-header-nav">
+							<ul>
+								<abbr title="Edit">
+									<button>
+										<Link to={`/study-sets/${this.props.params.studySetId}/edit`}>
+											<span className="fa fa-pencil"></span>
+										</Link>
+									</button>
+								</abbr>
+								<abbr title="Add study set to folder">
+									<button>
+										<Link to={`/study-sets/${this.props.params.studySetId}/add-folders`}>
+											<i className="fa fa-plus" aria-hidden="true"></i>
+										</Link>
+									</button>
+								</abbr>
+								<abbr title="Delete">
+									<button onClick={this.deleteStudySet.bind(this)}>
+										<Link>
+											<span className="fa fa-trash"></span>
+										</Link>
+									</button>
+								</abbr>
+							</ul>
+						</div>
 					</div>
-					<div className="study-set-info">
-						<h1>{studySet.title}</h1>
-						<p>{studySet.description}</p>
-					</div>
-					<div className="study-set-header-nav">
-						<ul>
-							<abbr title="Edit">
-								<button>
-									<Link to={`/study-sets/${this.props.params.studySetId}/edit`}>
-										<span className="fa fa-pencil"></span>
-									</Link>
-								</button>
-							</abbr>
-							<abbr title="Add study set to folder">
-								<button>
-									<Link to={`/study-sets/${this.props.params.studySetId}/add-folders`}>
-										<i className="fa fa-plus" aria-hidden="true"></i>
-									</Link>
-								</button>
-							</abbr>
-							<abbr title="Delete">
-								<button onClick={this.deleteStudySet.bind(this)}>
-									<Link>
-										<span className="fa fa-trash"></span>
-									</Link>
-								</button>
-							</abbr>
-						</ul>
-					</div>
-				
+					<Link to={`/study-sets/${this.props.params.studySetId}/flashcards`}
+							className="flashcards-link">
+						<button className="button-to-flashcards">
+							<div className="flashcard-icon">
+								<span className="fa fa-sticky-note" aria-hidden="true"></span>
+							</div>
+							<h2>FLASHCARDS</h2>
+						</button>
+					</Link>
 				</div>
 
 				<div className="study-set-cards">

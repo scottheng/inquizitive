@@ -53,7 +53,16 @@ class FolderShow extends React.Component {
 		const studySets = folder.study_sets.map((studySet, idx) => (
 			<li key={`folder-study-set-${idx}`}>
 				<Link to={`/study-sets/${studySet.id}`} className="study-sets-list-item">
-					<h3>Number of terms(get number of cards for this study set)</h3>
+					<div className="study-set-subinfo">
+						<h3>{studySet.card_count} terms</h3>
+						<br/>
+						<Link to={`/${this.props.currentUser.username}`}>
+							<h4>
+								<span className="fa fa-user" aria-hidden="true"></span>
+								{this.props.currentUser.username}
+							</h4>
+						</Link>
+					</div>
 					<h2>{studySet.title}</h2>
 				</Link>
 				<button className="remove-study-set-button"
@@ -72,7 +81,11 @@ class FolderShow extends React.Component {
 						<div className="main-content-subheader">
 							<div className="folder-description">
 								<h3>created by </h3>
-								<h3>{this.props.currentUser.username}</h3>
+								<h3>
+									<Link to={`/${this.props.currentUser.username}`}>
+										{this.props.currentUser.username}
+									</Link>
+								</h3>
 							</div>
 							<div className="folder-title">
 								<h1 className="folder-title">

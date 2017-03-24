@@ -51,7 +51,11 @@ div.folder-description {
 		&:last-child {
 			letter-spacing: 1px;
 			color: $turquoise;	
-			font-weight: normal;
+			font-weight: bolder;
+
+			&:hover {
+				color: $yellow;
+			}
 		}
 	}
 }
@@ -108,8 +112,9 @@ button.remove-study-set-button {
 	height: 30px;
 	margin-left: 10px;
 	color: red;
+	opacity: 0.4;
 
 	&:hover {
-		color: $gray;;
+		opacity: 1;
 	}
 }
