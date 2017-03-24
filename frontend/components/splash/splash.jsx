@@ -36,7 +36,6 @@ class Splash extends React.Component {
 	
 				</div>
 				<div className="study-set-preview-list">
-				
 				</div>
 			</div>
 		);

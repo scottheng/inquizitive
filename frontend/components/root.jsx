@@ -10,6 +10,7 @@ import StudySetFormContainer from './studysets/study_set_form_container';
 import FoldersIndexContainer from './folders/folder_index_container';
 import FolderShowContainer from './folders/folder_show_container';
 import StudySetFolderFormContainer from './studysetfolders/study_set_folder_form_container';
+import FlashcardsContainer from './studysets/flashcards_container';
 
 const Root = ({ store }) => {
 
@@ -40,6 +41,7 @@ const Root = ({ store }) => {
 					<Route path='/folders/:folderId' component={ FolderShowContainer } onEnter={_ensureLoggedIn} />
 					<Route path='/folders/:folderId/add-study-sets' component={ StudySetFolderFormContainer} onEnter={_ensureLoggedIn} />
 					<Route path='/study-sets/:studySetId/add-folders' component={ StudySetFolderFormContainer} onEnter={_ensureLoggedIn} />
+					<Route path='/study-sets/:studySetId/flashcards' component={ FlashcardsContainer } onEnter={_ensureLoggedIn} />
 				</Route>
 			</Router>
 
