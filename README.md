@@ -5,7 +5,23 @@ Check out the live [website][heroku] !
 [heroku]: https://inquizitive-app.herokuapp.com
 
 <p align="center">
-	<img src="docs/screenshots/splash-home.png" alt="Home Page" style="width: 200px;"/>
+	<img src="docs/screenshots/splash-home.png" alt="Home Page" />
+</p>
+
+<p align="center">
+	<img src="docs/screenshots/add-study-sets-to-folder.png" alt="Home Page" />
+</p>
+
+<p align="center">
+	<img src="docs/screenshots/folder-show.png" alt="Home Page" />
+</p>
+
+<p align="center">
+	<img src="docs/screenshots/user-dashboard.png" alt="Home Page" />
+</p>
+
+<p align="center">
+	<img src="docs/screenshots/create-study-set.png" alt="Home Page" />
 </p>
 
 Inspired by my favorite flashcards app, inQuizitive is a full-stack web application clone of Quizlet. 
