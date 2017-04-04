@@ -6,12 +6,12 @@ div.user-homepage {
 	display: flex;
 	justify-content: flex-start;
 	background: $background-gray;
+	min-height: 100vh;
 
 
 	div.main-content {
 		background: $light-gray;
 		width: 100vw;
-		height: 100%;
 		
 		
 		header {
