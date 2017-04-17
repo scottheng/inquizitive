@@ -2,11 +2,13 @@
 	background: $light-gray;
 	height: 100vh;
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
+	// justify-content: center;
 	
 }
 /* entire container, keeps perspective */
 .flip-container {
+	align-self: center;
 	perspective: 1000px;
 
 }
@@ -18,7 +20,7 @@
 .flip-container, .front, .back {
 	width: 800px;
 	height: 450px;
-	position: absolute;
+	// position: absolute;
 	top: 100px;
 }
 
@@ -61,8 +63,8 @@
 }
 
 ul.prev-next-buttons {
-	align-self: flex-end;
-	margin-bottom: 100px;
+	align-self: center;
+	margin-top: 20px;
 	display: flex;
 	justify-content: space-between;
 	font-size: 48px;
@@ -86,4 +88,9 @@ button.active {
 	&:hover {
 		color: $yellow;
 	}
+}
+
+div.instructions {
+	align-self: center;
+	color: $blue;
 }

@@ -90,6 +90,9 @@ class Flashcards extends React.Component {
 
 		return (
 			<div className="flashcards-page">
+				<div className="instructions">
+					<h1>Hover over flashcard to flip from term to definition</h1>
+				</div>
 				<div className="flip-container" >
 					<div className="flipper">
 						<div className="front">

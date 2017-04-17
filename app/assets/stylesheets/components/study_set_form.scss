@@ -51,6 +51,8 @@ div.study-set-description-header {
 	}
 }
 div.study-set-cards-form {
+	display: flex;
+	flex-direction: column;
 	background: $background-gray;
 	padding-bottom: 20px;
 }
@@ -84,7 +86,7 @@ button.add-card {
 	margin: 0 auto;
 	padding: 20px;
 	margin-top: 20px;
-	margin-left: 120px;
+	// margin-left: 120px;
 	
 	h2 {
 		font-size: 18px;
@@ -100,6 +102,7 @@ button.add-card {
 }
 
 button.submit {
+	align-self: center;
 	background: $turquoise;
 	color: white;
 	font-size: 18px;
@@ -107,7 +110,7 @@ button.submit {
 	padding-bottom: 20px;
 	padding-left: 80px;
 	padding-right: 80px;
-	margin-left: 950px;
+
 
 	&:hover {
 		background: $yellow;

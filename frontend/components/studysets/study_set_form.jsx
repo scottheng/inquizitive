@@ -134,11 +134,11 @@ class StudySetForm extends React.Component {
 				<div className="study-set-cards-form">
 					<ul className="cards-form-list">
 						{cardForms}
+						<button onClick={this.addCard.bind(this)}
+								className="add-card">
+								<h2>+  ADD CARD</h2>
+						</button>
 					</ul>
-					<button onClick={this.addCard.bind(this)}
-							className="add-card">
-							<h2>+  ADD CARD</h2>
-					</button>
 					<br/>
 					{submitButton()}
 				</div>
